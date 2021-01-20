@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17.5px;
+    background-position: center;
+}
+
+
 form.signup,
 form.login {
 	margin-top: 50px;
 }
+
