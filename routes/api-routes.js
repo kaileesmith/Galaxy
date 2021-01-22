@@ -10,13 +10,12 @@ module.exports = function (app) {
 		res.json(req.user);
 	});
 
-	// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-	// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-	// otherwise send back an error
+	// Route for signing up a user. The user's password is automatically hashed and stored securely
 	app.post("/api/signup", function (req, res) {
 		db.User.create({
 			email: req.body.email,
 			password: req.body.password,
+			houseName: req.body.houseName,
 		})
 			.then(function () {
 				res.redirect(307, "/api/login");
@@ -45,5 +44,63 @@ module.exports = function (app) {
 				id: req.user.id,
 			});
 		}
+	});
+
+	// Route to get all users for house hold
+	app.get("api/housemember", (req, res) => {
+		db.HouseMember.findAll({}).then((dbHouseMember) => res.json(dbHouseMember));
+	});
+
+	// Route to create Housememeber
+	app.post("api/housememeber", (req, res) => {
+		db.HouseMember.create({
+			name: req.body.name,
+		}).then((dbHouseMember) => res.json(dbHouseMember));
+	});
+
+	// Route to delete a housememeber
+	app.delete("api/housemember/:id", (req, res) => {
+		db.HouseMember.destroy({
+			where: {
+				id: req.params.id,
+			},
+		}).then(() => res.send("user has been deleted!"));
+	});
+
+	// Route to create a Task
+	app.post("api/task", (req, res) => {
+		db.Task.create({
+			title: req.body.title,
+			description: req.body.description,
+			monday: false,
+			tuesday: false,
+			wednesday: false,
+			thursday: false,
+			friday: false,
+			saturday: false,
+			sunday: false,
+		}).then((dbTask) => res.json(dbTask));
+	});
+
+	// Route to delete a Task
+	app.delete("api/task/:id", (req, res) => {
+		db.Task.destroy({
+			where: {
+				id: req.params.id,
+			},
+		}).then(() => res.send("task has been deleted!"));
+	});
+
+	// Route to update a Task
+	app.patch("api/task", (req, res) => {
+		db.Task.update(
+			{
+				title: req.body.title,
+				description: req.body.description,
+			},
+			{
+				where: { id: req.body.id },
+			}
+		).then(() => res.send("updated!"));
 	});
 };
