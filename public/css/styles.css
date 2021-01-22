@@ -1,14 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+
+/* html {
+	box-sizing: border-box;
+} */
+
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 17.5px;
-    background-position: center;
+	font-size: 17.5px;
+	font-weight: 400px;
+	background-position: center;
+	/* background-color: #151515; */
 }
 
+/* best practice for border box model */
+/* *, *:before, *:after {
+  box-sizing: inherit;} */
+
+.tinted-image {
+	/* background large */
+	background-attachment: fixed;
+	
+	/* tinting: can change to any color */
+	/* credit to https://css-tricks.com/tinted-images-multiple-backgrounds/ */
+	background-image: linear-gradient(
+	rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)	),
+	url("https://www.lifesavvy.com/thumbcache/0/0/e85aeb0fabb0cbc4e1bf6d8466a0fa6c/p/uploads/2019/11/658f822e.jpg");
+	
+
+	/* img manipulation stretch to page */
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	background-color: #E4E4E4;
+
+}
+
+div.jumbotron {
+background: rgba(11, 224, 1, 0.3);
+border: none;
+}
+
+#email-input {
+	margin-bottom: 0px;
+}
+
+#password-input {
+	margin-top: 0;
+}
 
 form.signup,
 form.login {
 	margin-top: 50px;
 }
 
+div.box-model-signin {
+	margin: 0 auto;
+	padding: 15px;
+	width: 100%;
+	max-width: 330px;
+	max-height: 430px
+}
+
+div.box-model-signup {
+	margin-top: 250px;
+}
+
+#email-input {
+	line-height: 1.5;
+}
+div.vertical-input-group {
+	line-height: 1.5;
+	margin-bottom: 15px;
+}
+.form-control {
+	display: block;
+	width: 100%;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s;
+}
+.form-group {
+		margin-bottom: 0;
+}
+
+.form-signin input[type="email"] {
+	margin-bottom: -1;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.btn-red-custom {
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+
+.text-bigly {
+	text-transform: uppercase;
+	color: white;
+}
+
+/* .form-control-not-last-child:not(:focus) {
+		border-bottom-color: transparent;
+}
+.form-control-first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.form-control-last-child {
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+top: -1px;
+}
+
+.form-control-last-child:not(:focus) {
+		border-top-color: transparent !important;
+} */
+
+
+button.btn-red-custom:hover {
+	color: #fff;
+	background-color: #9f0013;
+	/* border-color: #e62429 transparent; */
+    opacity: 1;
+}
+
+button.btn-red-custom {
+	color: #fff;
+	background-color: #e62429;
+    /* border-color: #e62429; */
+    transition: none;
+    transition-property: none;
+    transition-duration: 0s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+/* Start Tables/Members CSS  */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
