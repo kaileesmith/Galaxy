@@ -1,33 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Passport Authentication</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link
-			rel="stylesheet"
-			href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
-		/>
-		<link href="../css/styles.css" rel="stylesheet" />
-	</head>
 
-	<body>
-		<nav class="navbar navbar-dark bg-dark">
-			<div class="container-fluid">
-				<div class="navbar-header float-right">
-					<a class="navbar-brand" href="/logout"> Logout </a>
-				</div>
-			</div>
-		</nav>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-md-offset-3">
-					<h2>Welcome <span class="member-name"></span></h2>
-				</div>
+<head>
+	<title>Galaxy || Chore Dashboard</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" />
+	<link href="../css/styles.css" rel="stylesheet" />
+	<!-- font awesome link below -->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+			<div class="navbar-header float-right">
+				<a class="navbar-brand" href="/logout"> Logout </a>
 			</div>
 		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-offset-3">
+				<h2>Welcome <span class="member-name"></span></h2>
+			</div>
+		</div>
+	</div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="../js/members.js"></script>
-	</body>
+	<div class="container">
+		<div class="CRUD-user-dashboard">
+			<h2>Users - Add or Remove <i class="fas fa-arrow-down"></i></h2>
+			<form id="cms">
+				<div class="form-group">
+					<label for="chore-name-title">Add a user:</label>
+					<input type="text" class="form-control" id="title">
+					<!-- Body Not Needed -->
+					<!-- <br />
+					<label for="body">Body:</label>
+					<textarea class="form-control" rows="10" id="body"></textarea> -->
+					<br />
+					<button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+				</div>
+				<h4>Added users:</h4>
+				<ul class="list-group">
+					<li class="list-group-item">Didier Drogba <button type="button"
+							class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button type="button"
+							class="btn btn-outline-secondary">Edit</button></li>
+					<li class="list-group-item">Amelia Earhart <button type="button"
+							class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button type="button"
+							class="btn btn-outline-secondary">Edit</button></li>
+					<li class="list-group-item">Frida Kahlo <button type="button"
+							class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button type="button"
+							class="btn btn-outline-secondary">Edit</button></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="CRUD-chores-dashboard">
+			<!-- maybe drop down menu so it doesnt get too cluttered? Make font awesome icon clickable for expand/minimise -->
+			<h2>Chores - Add or Remove <i class="fas fa-arrow-down"></i></h2>
+			<form id="cms">
+				<div class="form-group">
+					<label for="chore-name-title">Add a chore:</label>
+					<input type="text" class="form-control" id="title">
+					<div class="row">
+						<div class="form-group">
+							<label for="category">Select who is assigned this task:</label>
+							<select class="custom-select" id="category">
+								<option value="name1">Didier Drogba</option>
+								<option value="name2">Amelia Earhart</option>
+								<option value="name3">Frida Kahlo</option>
+							</select>
+						</div>
+					</div>
+					<!-- Body Not Needed -->
+					<!-- <br />
+								<label for="body">Body:</label>
+								<textarea class="form-control" rows="10" id="body"></textarea> -->
+					<!-- start chores add section -->
+					<div class="row">
+						<h4>Choose what days to do this chore:</h4>
+						<div class="form-group">
+							<input type="checkbox" name="day1" value="week-interval"> Monday
+							<input type="checkbox" name="day2" value="week-interval"> Tuesday
+							<input type="checkbox" name="day3" value="week-interval" checked> Wednesday
+							<input type="checkbox" name="day4" value="week-interval"> Thursday
+							<input type="checkbox" name="day5" value="week-interval"> Friday
+							<input type="checkbox" name="day6" value="week-interval" checked> Saturday
+							<input type="checkbox" name="day7" value="week-interval"> Sunday
+						</div>
+						<br />
+						<button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+					</div>
+					<h4>Chores Added:</h4>
+					<br>
+					<div class="row">
+						<div class="row">
+							<div class="col-sm-3">
+								<p id="what-is-chore">Walk the dog</p>
+							</div>
+							<div class="col-sm-3">
+								<p id="who-does-chore-name">Frida Kahlo</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8">
+								<!-- refuse input till "edit pressed" think there is an html way to do this -->
+								<div class="form-group">
+									<input type="checkbox" name="day1" value="week-interval"> Monday
+									<input type="checkbox" name="day2" value="week-interval"> Tuesday
+									<input type="checkbox" name="day3" value="week-interval" checked> Wednesday
+									<input type="checkbox" name="day4" value="week-interval"> Thursday
+									<input type="checkbox" name="day5" value="week-interval"> Friday
+									<input type="checkbox" name="day6" value="week-interval" checked> Saturday
+									<input type="checkbox" name="day7" value="week-interval"> Sunday
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<button class="btn btn-outline-secondary">Edit</button>
+								<button class="btn btn-outline-secondary">Confirm</button>
+							</div>
+						</div>
+					</div>
+					<!-- end chores add section -->
+
+
+
+
+			</form>
+
+		</div>
+	</div>
+
+
+
+	<div class="container">
+		<h2>Weekly Chore Planner</h2>
+
+		<table>
+			<tr>
+				<th scope="col">Chores</th>
+				<th scope="col">Monday</th>
+				<th scope="col">Tuesday</th>
+				<th scope="col">Wednesday</th>
+				<th scope="col">Thursday</th>
+				<th scope="col">Friday</th>
+				<th scope="col">Saturday</th>
+				<th scope="col">Sunday</th>
+			</tr>
+			<tr>
+				<th scope="row">chore 1</th>
+				<td>Alfreds Futterkiste</td>
+				<td>Maria Anders</td>
+				<!-- shading doest extend unless td is there -->
+				<td>Germany</td>
+				<!-- if td is empty string it still shades -->
+				<!-- so we still need to manipulate dom to create an element
+						for every chore entry
+				-->
+				<td></td>
+				<td>Germany</td>
+				<td>Germany</td>
+				<td>Germany</td>
+			</tr>
+			<tr>
+				<th scope="row">chore 2</th>
+				<td>Centro comercial Moctezuma</td>
+				<td>Francisco Chang</td>
+				<td>Mexico</td>
+				<td>Austria</td>
+				<td>Austria</td>
+				<td>Austria</td>
+				<td>Austria</td>
+			</tr>
+			<tr>
+				<th scope="row">chore 3</th>
+				<td>Ernst Handel</td>
+				<td>Roland Mendel</td>
+				<td>Austria</td>
+				<td>Austria</td>
+				<td>Austria</td>
+				<td>Austria</td>
+				<td>Austria</td>
+			</tr>
+			<tr>
+				<th scope="row">chore 4</th>
+				<td>Island Trading</td>
+				<td>Helen Bennett</td>
+				<td>UK</td>
+				<td>UK</td>
+				<td>UK</td>
+				<td>UK</td>
+				<td>UK</td>
+			</tr>
+			<tr>
+				<th scope="row">chore 5</th>
+				<td>Laughing Bacchus Winecellars</td>
+				<td>Yoshi Tannamuri</td>
+				<td>Canada</td>
+				<td>Canada</td>
+				<td>Canada</td>
+				<td>Canada</td>
+				<td>2nd last row 7 col</td>
+			</tr>
+			<tr>
+				<th scope="row">chore 6</th>
+				<td>Magazzini Alimentari Riuniti</td>
+				<td>Giovanni Rovelli</td>
+				<td>Italy</td>
+				<td>Canada</td>
+				<td>Canada</td>
+				<td>Canada</td>
+				<td>last row col</td>
+			</tr>
+		</table>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/members.js"></script>
+</body>
+
 </html>
