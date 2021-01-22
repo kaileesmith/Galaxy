@@ -6,7 +6,7 @@ const passport = require("./config/passport");
 
 // Bringing in secrets from .env file
 require("dotenv").config();
-console.log(process.env.EVENT_BRITE_KEY);
+console.log(process.env.API_KEY);
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
