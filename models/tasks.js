@@ -7,40 +7,16 @@ module.exports = (sequelize, DataTypes) => {
 				len: [1],
 			},
 		},
-		body: {
+		description: {
 			type: DataTypes.TEXT,
 			allowNull: true,
 			len: [1],
 		},
-		monday: {
-			type: DataTypes.BOOLEAN,
-			defaultValue: false,
+		housemember: {
+			type: DataTypes.STRING,
+			allowNull: true,
+			len: [1],
 		},
-		tuesday: {
-			type: DataTypes.BOOLEAN,
-			defaultValue: false,
-		},
-		wednesday: {
-			type: DataTypes.BOOLEAN,
-			defaultValue: false,
-		},
-		thursday: {
-			type: DataTypes.BOOLEAN,
-			defaultValue: false,
-		},
-		friday: {
-			type: DataTypes.BOOLEAN,
-			defaultValue: false,
-		},
-		saturday: {
-			type: DataTypes.BOOLEAN,
-			defaultValue: false,
-		},
-		sunday: {
-			type: DataTypes.BOOLEAN,
-			defaultValue: false,
-		},
-
 	}); 
 
 	Task.associate = function (models) {
