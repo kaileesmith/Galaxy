@@ -7,15 +7,13 @@ module.exports = (sequelize, DataTypes) => {
 				len: [1],
 			},
 		},
-		body: {
+		description: {
 			type: DataTypes.TEXT,
 			allowNull: true,
-			len: [1],
 		},
 		housemember: {
 			type: DataTypes.STRING,
 			allowNull: true,
-			len: [1],
 		},
 	}); 
 
