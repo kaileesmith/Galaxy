@@ -10,12 +10,10 @@ module.exports = (sequelize, DataTypes) => {
 		description: {
 			type: DataTypes.TEXT,
 			allowNull: true,
-			len: [1],
 		},
 		housemember: {
 			type: DataTypes.STRING,
 			allowNull: true,
-			len: [1],
 		},
 	}); 
 
