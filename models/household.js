@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 		},
 	});
 	HouseMember.associate = (models) => {
+		// has many rather than belongsto?
 		HouseMember.belongsTo(models.User, {
 			foreignKey: {
 				allowNull: false,
