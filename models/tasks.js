@@ -12,17 +12,44 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: true,
 			len: [1],
 		},
-		complete: {
+		monday: {
 			type: DataTypes.BOOLEAN,
 			defaultValue: false,
 		},
-	});
+		tuesday: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+		},
+		wednesday: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+		},
+		thursday: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+		},
+		friday: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+		},
+		saturday: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+		},
+		sunday: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: false,
+		},
+
+	}); 
+
 	Task.associate = function (models) {
-		Task.belongsTo(models.HouseMember, {
+		Task.belongsTo(models.User, {
 			foreignKey: {
 				allowNull: false,
 			},
 		});
+		
 	};
 	return Task;
 };
