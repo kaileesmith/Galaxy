@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 				len: [1],
 			},
 		},
-		body: {
+		description: {
 			type: DataTypes.TEXT,
 			allowNull: true,
 			len: [1],
