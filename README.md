@@ -2,7 +2,7 @@
 
 ## Application Requirements
 * Must use a Node and Express server
-* Must use Handlebars.js as the template engine
+* Must use Handlebars.js as the template engine [apparently this is now optional]
 * Must be backed by a MySQL database with a Sequelize ORM
 * Must utilize both GET and POST routes for retrieving and adding new data
 * Must be deployed using Heroku (with data)
