@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 
-/* html {
-	box-sizing: border-box;
-} */
-
-div.big-parent {
+body.big-parent {
     font-family: 'Roboto', sans-serif;
 	font-size: 17.5px;
 	font-weight: 400;
@@ -17,7 +13,7 @@ div.big-parent {
 /* *, *:before, *:after {
   box-sizing: inherit;} */
 
-.tinted-image {
+body.tinted-image {
 	/* background large */
 	background-attachment: fixed;
 	
