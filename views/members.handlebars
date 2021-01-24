@@ -9,34 +9,52 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-md-offset-3">
-				<h2>Welcome <span class="member-name"></span></h2>
+				<h2>Welcome to <span class="member-name"></span></h2>
 			</div>
 		</div>
 	</div>
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-		Launch to add a user!
-	</button>
 
-	<!-- Modal -->
-	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+	<div class="container">
+	<!-- start Button trigger modal 1 ADD USER -->
+	
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
+		<i class="fas fa-plus"></i> ADD Users
+	</button>
+	{{!-- end button 1 modal trigger ADD USER--}}
+
+	<!-- Start button for modal 2: tasks & chores -->
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
+		<i class="fas fa-plus"></i> Tasks & Chores
+	</button>
+	{{!-- end button 2 or modal 2: ADD TASK --}}
+</div>
+	<!-- Modal 1 -->
+	<div class="modal fade" id="add-a-user" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 		aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Add A User</h5>
+					<h3 class="modal-title" id="staticBackdropLabel">Add Household Members</h3>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<div class="container">
 						<div class="CRUD-user-dashboard">
-							<h2>Users - Add or Remove <i class="fas fa-arrow-down"></i></h2>
+							{{!-- start ADD USER form --}}
 							<form id="cms">
-								<div class="form-group">
-									<label for="chore-name-title">Add a user:</label>
-									<input type="text" class="form-control" id="title">
-									<br />
+								<div class="input-group">
+
+									{{!-- start ADD USER text/input form --}}
+									<input type="text" class="form-control" placeholder="i.e. Frida Kahlo" id="title">
+									{{!-- end ADD USER text form --}}
+									<div class="input-group-append">
+									<button type="button" class="btn btn-primary">Submit</button>
+									</div>
 								</div>
+								{{!-- end input form group --}}
+									{{!-- should form end here? --}}
+								{{!-- start user db history --}}
+								
 								<h4>Added users:</h4>
 								<ul class="list-group">
 									<li class="list-group-item">Didier Drogba <button type="button"
@@ -50,17 +68,67 @@
 											type="button" class="btn btn-outline-secondary">Edit</button></li>
 								</ul>
 							</form>
+							{{!-- end ADD USER form --}}
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Submit</button>
+
 				</div>
 			</div>
 		</div>
 	</div>
-	{{!-- start of code --}}
+	{{!-- end modal 1 --}}
+
+	{{!-- start modal 2 --}}
+
+
+	<!-- Modal Add Task-->
+	<div class="modal fade" id="add-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Chores & Tasks</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="chore-name-title">Add a chore:</label>
+						<input type="text" class="form-control" id="title" placeholder="i.e. Feed Dog">
+						<br> 
+						{{!-- start description input text area --}}
+						<div class="form-group">
+							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or think about how we display chore details. --}}
+							<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
+						</div>
+						{{!-- end description input --}}
+						<div class="row">
+							<div class="form-group">
+								<label for="category">Select who is assigned this task:</label>
+								<select class="custom-select" id="category">
+									<option value="name1">Didier Drogba</option>
+									<option value="name2">Amelia Earhart</option>
+									<option value="name3">Frida Kahlo</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{{!-- begin commenting out. Giving an opportunity for each group member to see what we're deleting, and  
+if we might need this code--}}
+
+{{!-- Start TODO: DELETE --}}
+
+	{{!-- start of code
 	<div class="container">
 		<div class="CRUD-chores-dashboard">
 			<!-- maybe drop down menu so it doesnt get too cluttered? Make font awesome icon clickable for expand/minimise -->
@@ -136,9 +204,9 @@
 			</form>
 
 		</div>
-	</div>
+	</div> --}}
 
-
+{{!-- END: TODO: DELETE --}}
 
 	<div class="container">
 		<h2>Chore Planner</h2>
