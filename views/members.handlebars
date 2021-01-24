@@ -15,19 +15,19 @@
 	</div>
 
 	<div class="container">
-	<!-- start Button trigger modal 1 ADD USER -->
-	
-	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
-		<i class="fas fa-plus"></i> ADD Users
-	</button>
-	{{!-- end button 1 modal trigger ADD USER--}}
+		<!-- start Button trigger modal 1 ADD USER -->
 
-	<!-- Start button for modal 2: tasks & chores -->
-	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
-		<i class="fas fa-plus"></i> Tasks & Chores
-	</button>
-	{{!-- end button 2 or modal 2: ADD TASK --}}
-</div>
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
+			<i class="fas fa-plus"></i> ADD Users
+		</button>
+		{{!-- end button 1 modal trigger ADD USER--}}
+
+		<!-- Start button for modal 2: tasks & chores -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
+			<i class="fas fa-plus"></i> Tasks & Chores
+		</button>
+		{{!-- end button 2 or modal 2: ADD TASK --}}
+	</div>
 	<!-- Modal 1 -->
 	<div class="modal fade" id="add-a-user" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 		aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -41,31 +41,30 @@
 					<div class="container">
 						<div class="CRUD-user-dashboard">
 							{{!-- start ADD USER form --}}
-							<form id="cms">
+							<form id="cms" class="add">
 								<div class="input-group">
 
 									{{!-- start ADD USER text/input form --}}
-									<input type="text" class="form-control" placeholder="i.e. Frida Kahlo" id="title">
+									<input type="text" class="form-control" placeholder="i.e. Frida Kahlo"
+										id="name-input">
 									{{!-- end ADD USER text form --}}
 									<div class="input-group-append">
-									<button type="button" class="btn btn-primary">Submit</button>
+										<button type="submit" class="btn btn-primary">Submit</button>
 									</div>
 								</div>
-								{{!-- end input form group --}}
-									{{!-- should form end here? --}}
-								{{!-- start user db history --}}
-								
+							</form>
+							{{!-- end input form group --}}
+							{{!-- should form end here? --}}
+							{{!-- start user db history --}}
+
+							<form id="cms" class="add">
 								<h4>Added users:</h4>
 								<ul class="list-group">
-									<li class="list-group-item">Didier Drogba <button type="button"
+									{{#each HouseMember}}
+									<li class="list-group-item">{{name}} <button type="button"
 											class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button
 											type="button" class="btn btn-outline-secondary">Edit</button></li>
-									<li class="list-group-item">Amelia Earhart <button type="button"
-											class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button
-											type="button" class="btn btn-outline-secondary">Edit</button></li>
-									<li class="list-group-item">Frida Kahlo <button type="button"
-											class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button
-											type="button" class="btn btn-outline-secondary">Edit</button></li>
+									{{/each}}
 								</ul>
 							</form>
 							{{!-- end ADD USER form --}}
@@ -85,7 +84,8 @@
 
 
 	<!-- Modal Add Task-->
-	<div class="modal fade" id="add-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="add-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+		data-bs-backdrop="static" data-bs-keyboard="false">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -96,11 +96,12 @@
 					<div class="form-group">
 						<label for="chore-name-title">Add a chore:</label>
 						<input type="text" class="form-control" id="title" placeholder="i.e. Feed Dog">
-						<br> 
+						<br>
 						{{!-- start description input text area --}}
 						<div class="form-group">
 							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or think about how we display chore details. --}}
-							<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
+							<textarea class="form-control" id="exampleFormControlTextarea1"
+								placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
 						</div>
 						{{!-- end description input --}}
 						<div class="row">
@@ -123,10 +124,10 @@
 		</div>
 	</div>
 
-{{!-- begin commenting out. Giving an opportunity for each group member to see what we're deleting, and  
+	{{!-- begin commenting out. Giving an opportunity for each group member to see what we're deleting, and  
 if we might need this code--}}
 
-{{!-- Start TODO: DELETE --}}
+	{{!-- Start TODO: DELETE --}}
 
 	{{!-- start of code
 	<div class="container">
@@ -206,7 +207,7 @@ if we might need this code--}}
 		</div>
 	</div> --}}
 
-{{!-- END: TODO: DELETE --}}
+	{{!-- END: TODO: DELETE --}}
 
 	<div class="container">
 		<h2>Chore Planner</h2>

@@ -25,6 +25,12 @@ module.exports = function (app) {
 			});
 	});
 
+	// Route to get all users
+	app.get("/api/signup", (req, res) => {
+		db.User.findAll({}).then((dbUser) => res.json(dbUser));
+		console.log("stuff happened");
+	});
+
 	// Route for logging user out
 	app.get("/logout", function (req, res) {
 		req.logout();
@@ -48,19 +54,20 @@ module.exports = function (app) {
 	});
 
 	// Route to get all users for house hold
-	app.get("api/housemember", (req, res) => {
+	app.get("/api/housemember", (req, res) => {
 		db.HouseMember.findAll({}).then((dbHouseMember) => res.json(dbHouseMember));
+		console.log("stuff happened");
 	});
 
 	// Route to create Housememeber
-	app.post("api/housememeber", (req, res) => {
+	app.post("/api/housemember", (req, res) => {
 		db.HouseMember.create({
 			name: req.body.name,
 		}).then((dbHouseMember) => res.json(dbHouseMember));
 	});
 
 	// Route to delete a housememeber
-	app.delete("api/housemember/:id", (req, res) => {
+	app.delete("/api/housemember/:id", (req, res) => {
 		db.HouseMember.destroy({
 			where: {
 				id: req.params.id,
@@ -69,22 +76,15 @@ module.exports = function (app) {
 	});
 
 	// Route to create a Task
-	app.post("api/task", (req, res) => {
+	app.post("/api/task", (req, res) => {
 		db.Task.create({
 			title: req.body.title,
 			description: req.body.description,
-			monday: false,
-			tuesday: false,
-			wednesday: false,
-			thursday: false,
-			friday: false,
-			saturday: false,
-			sunday: false,
 		}).then((dbTask) => res.json(dbTask));
 	});
 
 	// Route to delete a Task
-	app.delete("api/task/:id", (req, res) => {
+	app.delete("/api/task/:id", (req, res) => {
 		db.Task.destroy({
 			where: {
 				id: req.params.id,
@@ -93,7 +93,7 @@ module.exports = function (app) {
 	});
 
 	// Route to update a Task
-	app.patch("api/task", (req, res) => {
+	app.patch("/api/task", (req, res) => {
 		db.Task.update(
 			{
 				title: req.body.title,

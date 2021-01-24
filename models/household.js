@@ -3,18 +3,10 @@ module.exports = (sequelize, DataTypes) => {
 		name: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			validate: {
-				len: [2, 50],
-			},
 		},
 	});
 	HouseMember.associate = (models) => {
-		// has many rather than belongsto?
-		HouseMember.belongsTo(models.User, {
-			foreignKey: {
-				allowNull: false,
-			},
-		});
+		HouseMember.belongsTo(models.User);
 	};
 	return HouseMember;
 };
