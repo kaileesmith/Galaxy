@@ -25,6 +25,12 @@ module.exports = function (app) {
 			});
 	});
 
+	// Route to get all users
+	app.get("/api/signup", (req, res) => {
+		db.User.findAll({}).then((dbUser) => res.json(dbUser));
+		console.log("stuff happened");
+	});
+
 	// Route for logging user out
 	app.get("/logout", function (req, res) {
 		req.logout();
