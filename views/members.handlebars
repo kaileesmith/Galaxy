@@ -58,13 +58,19 @@
 							{{!-- start user db history --}}
 
 							<form id="cms" class="add">
-								<h4>Added users:</h4>
+								<h4 class="pt-3">Added users:</h4>
+								<hr>
 								<ul class="list-group">
 									{{#each HouseMember}}
-									<li class="list-group-item">{{name}} <button type="button"
+									<li class="list-group-item">{{name}}<button type="button"
 											class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button
 											type="button" class="btn btn-outline-secondary">Edit</button></li>
 									{{/each}}
+									<li class="list-group-item">
+										Pepper Pots
+										<button type="button"
+											class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button
+											type="button" class="btn btn-outline-secondary">Edit</button></li>
 								</ul>
 							</form>
 							{{!-- end ADD USER form --}}
