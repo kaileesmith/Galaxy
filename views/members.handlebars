@@ -41,7 +41,7 @@
 					<div class="container">
 						<div class="CRUD-user-dashboard">
 							{{!-- start ADD USER form --}}
-							<form id="cms" class="add">
+							<form id="cms1" class="add">
 								<div class="input-group">
 
 									{{!-- start ADD USER text/input form --}}
@@ -57,11 +57,14 @@
 							{{!-- should form end here? --}}
 							{{!-- start user db history --}}
 
-							<form id="cms" class="add">
-								<h4>Added users:</h4>
+							<form id="cms2" class="add">
+								<h4 class="pt-3">Added users:</h4>
+								<hr>
 								<ul class="list-group">
 									{{#each HouseMember}}
-									<li class="list-group-item">{{name}} <button type="button"
+									<li class="list-group-item">
+										{{name}}
+										<button type="button"
 											class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button
 											type="button" class="btn btn-outline-secondary">Edit</button></li>
 									{{/each}}
@@ -93,32 +96,29 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<div class="form-group">
+					<form id="cms2" class="add">
 						<label for="chore-name-title">Add a chore:</label>
-						<input type="text" class="form-control" id="title" placeholder="i.e. Feed Dog">
+						<input type="text" class="form-control" id="chore-title-input" placeholder="i.e. Feed Dog">
 						<br>
 						{{!-- start description input text area --}}
 						<div class="form-group">
 							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or think about how we display chore details. --}}
-							<textarea class="form-control" id="exampleFormControlTextarea1"
+							<textarea class="form-control" id="chore-description-input"
 								placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
 						</div>
 						{{!-- end description input --}}
 						<div class="row">
 							<div class="form-group">
 								<label for="category">Select who is assigned this task:</label>
-								<select class="custom-select" id="category">
-									<option value="name1">Didier Drogba</option>
-									<option value="name2">Amelia Earhart</option>
-									<option value="name3">Frida Kahlo</option>
+								<select class="custom-select" id="houseMember">
 								</select>
 							</div>
 						</div>
 					</div>
-				</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>
@@ -208,43 +208,36 @@ if we might need this code--}}
 	</div> --}}
 
 	{{!-- END: TODO: DELETE --}}
+<br>
+<div class="container">
+	<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
+	<div class="columnTitles">
+		<div class="row">
+			<div class="col shadow p-3 mb-5 bg-white rounded">
+				Chores
+			</div>
+			<div class="col shadow p-3 mb-5 bg-white rounded">
+				House Member Assigned
+			</div>
+			<div class="col-5 shadow p-3 mb-5 bg-white rounded">
+				Chore Details
+			</div>
+		</div>
+</div>
 
-	<div class="container">
-		<h2>Chore Planner</h2>
-
-		<table>
-			<tr>
-				<th scope="col">Chores</th>
-				<th scope="col">House Member Assigned</th>
-				<th scope="col">Chore Details</th>
-			</tr>
-			<tr>
-				<th scope="row">chore 1</th>
-				<td>Alfreds Futterkiste</td>
-
-			</tr>
-			<tr>
-				<th scope="row">chore 2</th>
-				<td>Centro comercial Moctezuma</td>
-			</tr>
-			<tr>
-				<th scope="row">chore 3</th>
-				<td>Ernst Handel</td>
-			</tr>
-			<tr>
-				<th scope="row">chore 4</th>
-				<td>Island Trading</td>
-			</tr>
-			<tr>
-				<th scope="row">chore 5</th>
-				<td>Laughing Bacchus Winecellars</td>
-			</tr>
-			<tr>
-				<th scope="row">chore 6</th>
-				<td>Magazzini Alimentari Riuniti</td>
-			</tr>
-		</table>
+<div class="container">
+	<div class="row">
+		<div class="col shadow-sm p-3 mb-5 bg-white rounded">
+			<p></p>
+		</div>
+		<div class="col shadow-sm p-3 mb-5 bg-white rounded">
+			<p></p>
+		</div>
+		<div class="col-5 shadow-sm p-3 mb-5 bg-white rounded">
+			<p></p>
+		</div>
 	</div>
+</div>	
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/members.js"></script>
