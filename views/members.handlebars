@@ -61,7 +61,7 @@
 								<h4 class="pt-3">Added users:</h4>
 								<hr>
 								<ul class="list-group">
-									{{#each HouseMember}}
+									{{#each data1}}
 									<li class="list-group-item">
 										{{name}}
 										<button type="button" class="btn btn-outline-warning delete"
@@ -111,7 +111,7 @@
 							<div class="form-group">
 								<label for="category">Select who is assigned this task:</label>
 								<select class="custom-select" id="houseMember">
-									{{#each HouseMember}}
+									{{#each data1}}
 									<option value="{{name}}">{{name}}</option>
 									{{/each}}
 								</select>
@@ -228,19 +228,21 @@ if we might need this code--}}
 			</div>
 		</div>
 
+		{{#each data2}}
 		<div class="container">
 			<div class="row">
 				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-					<p>some stuff</p>
+					<p>{{title}}</p>
 				</div>
 				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-					<p>some more stuff</p>
+					<p>{{housemember}}</p>
 				</div>
 				<div class="col-5 shadow-sm p-3 mb-5 bg-white rounded">
-					<p>and some more stuff</p>
+					<p>{{description}}</p>
 				</div>
 			</div>
 		</div>
+		{{/each}}
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/members.js"></script>
