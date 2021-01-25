@@ -39,8 +39,8 @@ body.tinted-image {
 }
 
 
-
-div.jumbotron {
+/* manipulate container box-model here */
+div.container-tint-box {
 background: rgba(11, 224, 1, 0.3);
 border: none;
 }
