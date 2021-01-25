@@ -80,7 +80,14 @@ module.exports = function (app) {
 		db.Task.create({
 			title: req.body.title,
 			description: req.body.description,
+			housemember: req.body.housemember,
 		}).then((dbTask) => res.json(dbTask));
+	});
+
+	// Route to find all chores
+	app.get("/api/task", (req, res) => {
+		db.Task.findAll({}).then((dbTask) => res.json(dbTask));
+		console.log("stuff happened");
 	});
 
 	// Route to delete a Task
@@ -98,6 +105,7 @@ module.exports = function (app) {
 			{
 				title: req.body.title,
 				description: req.body.description,
+				housemember: req.body.housemember,
 			},
 			{
 				where: { id: req.body.id },
