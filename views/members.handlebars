@@ -57,16 +57,16 @@
 							{{!-- should form end here? --}}
 							{{!-- start user db history --}}
 
-							<form id="cms2" class="add">
+							<form id="cms2" class="add2">
 								<h4 class="pt-3">Added users:</h4>
 								<hr>
 								<ul class="list-group">
 									{{#each HouseMember}}
 									<li class="list-group-item">
 										{{name}}
-										<button type="button"
-											class="btn btn-outline-warning">Delete</button>&nbsp;&nbsp;<button
-											type="button" class="btn btn-outline-secondary">Edit</button></li>
+										<button type="button" class="btn btn-outline-warning delete"
+											data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
+											class="btn btn-outline-secondary">Edit</button></li>
 									{{/each}}
 								</ul>
 							</form>
@@ -114,8 +114,8 @@
 								</select>
 							</div>
 						</div>
-					</div>
-					<button type="submit" class="btn btn-primary">Save</button>
+				</div>
+				<button type="submit" class="btn btn-primary">Save</button>
 				</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -208,37 +208,37 @@ if we might need this code--}}
 	</div> --}}
 
 	{{!-- END: TODO: DELETE --}}
-<br>
-<div class="container">
-	<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
-	<div class="columnTitles">
-		<div class="row">
-			<div class="col shadow p-3 mb-5 bg-white rounded">
-				Chores
-			</div>
-			<div class="col shadow p-3 mb-5 bg-white rounded">
-				House Member Assigned
-			</div>
-			<div class="col-5 shadow p-3 mb-5 bg-white rounded">
-				Chore Details
+	<br>
+	<div class="container">
+		<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
+		<div class="columnTitles">
+			<div class="row">
+				<div class="col shadow p-3 mb-5 bg-white rounded">
+					Chores
+				</div>
+				<div class="col shadow p-3 mb-5 bg-white rounded">
+					House Member Assigned
+				</div>
+				<div class="col-5 shadow p-3 mb-5 bg-white rounded">
+					Chore Details
+				</div>
 			</div>
 		</div>
-</div>
 
-<div class="container">
-	<div class="row">
-		<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-			<p></p>
+		<div class="container">
+			<div class="row">
+				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
+					<p></p>
+				</div>
+				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
+					<p></p>
+				</div>
+				<div class="col-5 shadow-sm p-3 mb-5 bg-white rounded">
+					<p></p>
+				</div>
+			</div>
 		</div>
-		<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-			<p></p>
-		</div>
-		<div class="col-5 shadow-sm p-3 mb-5 bg-white rounded">
-			<p></p>
-		</div>
-	</div>
-</div>	
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/members.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/members.js"></script>
 </body>
