@@ -25,11 +25,21 @@ module.exports = function (app) {
 	// Here we've add our isAuthenticated middleware to this route.
 	// If a user who is not logged in tries to access this route they will be redirected to the signup page
 	app.get("/members", isAuthenticated, function (req, res) {
+		let HouseMember;
+		let Task;
+		let allData = {};
 		db.HouseMember.findAll({ raw: true }).then((dbHouseMembers) => {
-			const HouseMember = dbHouseMembers;
-			console.log(HouseMember);
-			res.render("members", {
-				HouseMember,
+			HouseMember = dbHouseMembers;
+			allData.data1 = HouseMember;
+
+			// return HouseMember;
+			db.Task.findAll({ raw: true }).then((dbTask) => {
+				Task = dbTask;
+				allData.data2 = Task;
+
+				console.log(allData);
+
+				res.render("members", allData);
 			});
 		});
 	});
