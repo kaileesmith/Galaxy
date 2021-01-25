@@ -5,7 +5,7 @@
 body.big-parent {
     font-family: 'Roboto', sans-serif;
 	font-size: 17.5px;
-	font-weight: 400;
+	/* font-weight: 400; */
 	background-position: center;
 	/* background-color: #151515; */
 }
@@ -33,6 +33,12 @@ body.tinted-image {
 	background-color: #E4E4E4;
 
 }
+
+.navbar {
+	width: 100%;
+}
+
+
 
 div.jumbotron {
 background: rgba(11, 224, 1, 0.3);
@@ -108,25 +114,12 @@ div.vertical-input-group {
 	color: white;
 }
 
-/* .form-control-not-last-child:not(:focus) {
-		border-bottom-color: transparent;
-}
-.form-control-first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
-.form-control-last-child {
-border-top-left-radius: 0;
-border-top-right-radius: 0;
-border-bottom-right-radius: 3px;
-border-bottom-left-radius: 3px;
-top: -1px;
-}
+div.box-sizing-inherit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-.form-control-last-child:not(:focus) {
-		border-top-color: transparent !important;
-} */
-
+}
 
 button.btn-red-custom:hover {
 	color: #fff;
@@ -147,22 +140,6 @@ button.btn-red-custom {
 }
 
 /* Start Tables/Members CSS  */
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 
 .choreTitle{
 	font-family: 'Bangers', cursive;
