@@ -96,7 +96,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form id="cms2" class="add">
+					<form id="cms2" class="addTask">
 						<label for="chore-name-title">Add a chore:</label>
 						<input type="text" class="form-control" id="chore-title-input" placeholder="i.e. Feed Dog">
 						<br>
@@ -111,6 +111,9 @@
 							<div class="form-group">
 								<label for="category">Select who is assigned this task:</label>
 								<select class="custom-select" id="houseMember">
+									{{#each HouseMember}}
+									<option value="{{name}}">{{name}}</option>
+									{{/each}}
 								</select>
 							</div>
 						</div>
@@ -228,13 +231,13 @@ if we might need this code--}}
 		<div class="container">
 			<div class="row">
 				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-					<p></p>
+					<p>some stuff</p>
 				</div>
 				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-					<p></p>
+					<p>some more stuff</p>
 				</div>
 				<div class="col-5 shadow-sm p-3 mb-5 bg-white rounded">
-					<p></p>
+					<p>and some more stuff</p>
 				</div>
 			</div>
 		</div>

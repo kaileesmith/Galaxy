@@ -27,7 +27,7 @@ module.exports = function (app) {
 	app.get("/members", isAuthenticated, function (req, res) {
 		db.HouseMember.findAll({ raw: true }).then((dbHouseMembers) => {
 			const HouseMember = dbHouseMembers;
-			console.log(HouseMember);
+			// console.log(HouseMember);
 			res.render("members", {
 				HouseMember,
 			});
