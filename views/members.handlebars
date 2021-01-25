@@ -41,7 +41,7 @@
 					<div class="container">
 						<div class="CRUD-user-dashboard">
 							{{!-- start ADD USER form --}}
-							<form id="cms" class="add">
+							<form id="cms1" class="add">
 								<div class="input-group">
 
 									{{!-- start ADD USER text/input form --}}
@@ -57,7 +57,7 @@
 							{{!-- should form end here? --}}
 							{{!-- start user db history --}}
 
-							<form id="cms" class="add">
+							<form id="cms2" class="add">
 								<h4 class="pt-3">Added users:</h4>
 								<hr>
 								<ul class="list-group">
@@ -96,32 +96,29 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<div class="form-group">
+					<form id="cms2" class="add">
 						<label for="chore-name-title">Add a chore:</label>
-						<input type="text" class="form-control" id="title" placeholder="i.e. Feed Dog">
+						<input type="text" class="form-control" id="chore-title-input" placeholder="i.e. Feed Dog">
 						<br>
 						{{!-- start description input text area --}}
 						<div class="form-group">
 							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or think about how we display chore details. --}}
-							<textarea class="form-control" id="exampleFormControlTextarea1"
+							<textarea class="form-control" id="chore-description-input"
 								placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
 						</div>
 						{{!-- end description input --}}
 						<div class="row">
 							<div class="form-group">
 								<label for="category">Select who is assigned this task:</label>
-								<select class="custom-select" id="category">
-									<option value="name1">Didier Drogba</option>
-									<option value="name2">Amelia Earhart</option>
-									<option value="name3">Frida Kahlo</option>
+								<select class="custom-select" id="houseMember">
 								</select>
 							</div>
 						</div>
 					</div>
-				</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>

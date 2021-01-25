@@ -59,7 +59,7 @@ module.exports = function (app) {
 		console.log("stuff happened");
 	});
 
-	// Route to create Housememeber
+	// Route to create Housemember
 	app.post("/api/housemember", (req, res) => {
 		db.HouseMember.create({
 			name: req.body.name,
