@@ -44,7 +44,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
 
 ## Standards
 
-- Meets MVC Folder Structure Paradigm
+- Meets MVC Folder Structure Paradigm Standards
 
 
 
