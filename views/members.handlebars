@@ -101,6 +101,21 @@
 				<button type="submit" class="btn btn-primary col-4">Save</button>
 </div>
 				</form>
+
+				<form id="cms3" class="add3">
+								<h4 class="pt-3">Added tasks/chores:</h4>
+								<hr>
+								<ul class="list-group">
+									{{#each data2}}
+									<li class="list-group-item">
+										{{title}}&nbsp;&nbsp;{{housemember}}&nbsp;&nbsp;{{description}}
+										<button type="button" class="btn btn-outline-warning delete2"
+											data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
+											class="btn btn-outline-secondary">Edit</button>
+									</li>
+									{{/each}}
+								</ul>
+							</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				</div>
