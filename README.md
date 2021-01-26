@@ -25,7 +25,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
 3. Launch the application front-end in the command line with `nodemon server.js`
 4. Nodemon will show what localhost the project is launched on (most likely http://localhost:3000/). Follow the link.
 
-## Technologies:
+## Technologies
 
 - Bootstrap 5.0
 - MySQL & Workbench
@@ -42,13 +42,13 @@ Galaxy Planning is a full-stack application designed to make household planning 
     - handlebars.js
     - nodemon
 
-## Standards:
+## Standards
 
 - Meets MVC Folder Structure Paradigm
 
 
 
-## Contributors:
+## Contributors
 
 
 ### [![](https://github.com/sayler3.png?size=50)](https://github.com/sayler3)               Sam Ayler
@@ -67,7 +67,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
 
 Github Repo: your repo here
 
-Live Deployment: 
+Live Deployment: link here
 
 ## License
 
