@@ -50,8 +50,8 @@ Galaxy Planning is a full-stack application designed to make household planning 
 ## Contributors:
 
 
-[![](https://github.com/sayler3.png?size=50)](https://github.com/sayler3)
-### Sam Ayler                                                                       
+### [![](https://github.com/sayler3.png?size=50)](https://github.com/sayler3) Sam Ayler
+                                                      
 
 
 
