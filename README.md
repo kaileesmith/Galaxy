@@ -1,12 +1,15 @@
 # Galaxy
 
-Galaxy Planning is a full-stack application designed to make household easier. A user or users can keep track of what chores they 
+Galaxy Planning is a full-stack application designed to make household planning easier. A user or users can keep track of what chores they each person is responsible for. All credentials are protected with encryption. A Sequelize ORM coupled with GET and POST enables server-side CRUD functionality.  
 
 ## Table of Contents
 
 * [Installation](#installation)
 * [Technologies](#technologies)
+* [Standards](#standards)
 * [Contributors](#contributors)
+
+* [License](#license)
 * [Contact](#contact)
 
 
@@ -14,7 +17,7 @@ Galaxy Planning is a full-stack application designed to make household easier. A
 
 ### How to launch on Local Host:
 
-1. Install all dependencies by running `npm install` in the project directory (no arguments).
+1. Install all dependencies by running `npm install` in your terminal (no arguments).
     - by default npm will install all modules listed as depencies in package.json.
     - if nodemon is not installed globally run npm install nodemon in the command line for this project.
 2. Copy and Paste the schema into MySQL Workbench and run all code.
@@ -34,8 +37,13 @@ Galaxy Planning is a full-stack application designed to make household easier. A
     - mysql2
     - sequelize
     - passport
-    - handlebars
+    - handlebars.js
     - nodemon
+
+## Standards:
+
+- Meets MVC Folder Structure Paradigm
+
 
 ## Contributors:
 - Sam
@@ -44,8 +52,7 @@ Galaxy Planning is a full-stack application designed to make household easier. A
 
 ## License
 
-### MIT License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+### MIT License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 
