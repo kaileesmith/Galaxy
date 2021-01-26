@@ -30,7 +30,8 @@ Galaxy Planning is a full-stack application designed to make household planning 
 - MySQL & Workbench
 - Vanilla JS
 - Heroku
-- NPM & NODE.js
+- Node.js
+- NPM [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()
     - express
     - dotenv
     - bcryptjs
@@ -43,7 +44,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
 ## Standards:
 
 - Meets MVC Folder Structure Paradigm
-/snyk/vulnerabilities/github/:camRight/:Galaxy
+
 
 
 ## Contributors:
