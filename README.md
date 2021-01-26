@@ -10,6 +10,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
 * [Contributors](#contributors)
 
 * [License](#license)
+* [Live Deployment & Repo Links](#links)
 * [Contact](#contact)
 
 
@@ -62,20 +63,19 @@ Galaxy Planning is a full-stack application designed to make household planning 
 ### [![](https://github.com/camRight.png?size=50)](https://github.com/camRight)             Cameron Wright
 
 
+## Links
+
+Github Repo: your repo here
+Live Deployment: 
+
 ## License
 
 ### MIT License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 
-## Application Requirements
-* Must use a Node and Express server
-* Must use Handlebars.js as the template engine [apparently this is now optional]
-* Must be backed by a MySQL database with a Sequelize ORM
-* Must utilize both GET and POST routes for retrieving and adding new data
-* Must be deployed using Heroku (with data)
-* Must utilize at least one new library, package, or technology that we haven’t discussed
-* Must have a polished front end/UI
-* Must have a folder structure that meets the MVC paradigm
-* Must meet good quality coding standards (indentation, scoping, naming)
-* Must protect API keys in Node with environment variables
+## Contact
+
+- YOUR NAME HERE
+    - EMAIL:
+    - GITHUB
