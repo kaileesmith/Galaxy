@@ -1,33 +1,11 @@
 <body>
-	<nav class="navbar navbar-dark bg-dark">
-		<div class="container-fluid">
-			<div class="navbar-header float-right">
-				<a class="navbar-brand" href="/logout"> Logout </a>
-			</div>
+	<nav class="navbar navbar-dark bg-dark ">
+		<div class="container-fluid d-flex flex-row">
+			<span class="navbar-brand justify-content-start">Welcome to <span class="member-name"></span></span>
+			<a class="navbar-brand justify-content-end" href="/logout"> Logout </a>
 		</div>
 	</nav>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-md-offset-3">
-				<h2>Welcome to <span class="member-name"></span></h2>
-			</div>
-		</div>
-	</div>
 
-	<div class="container">
-		<!-- start Button trigger modal 1 ADD USER -->
-
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
-			<i class="fas fa-plus"></i> ADD Users
-		</button>
-		{{!-- end button 1 modal trigger ADD USER--}}
-
-		<!-- Start button for modal 2: tasks & chores -->
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
-			<i class="fas fa-plus"></i> Tasks & Chores
-		</button>
-		{{!-- end button 2 or modal 2: ADD TASK --}}
-	</div>
 	<!-- Modal 1 -->
 	<div class="modal fade" id="add-a-user" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 		aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -66,7 +44,8 @@
 										{{name}}
 										<button type="button" class="btn btn-outline-warning delete"
 											data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
-											class="btn btn-outline-secondary">Edit</button></li>
+											class="btn btn-outline-secondary">Edit</button>
+									</li>
 									{{/each}}
 								</ul>
 							</form>
@@ -84,8 +63,6 @@
 	{{!-- end modal 1 --}}
 
 	{{!-- start modal 2 --}}
-
-
 	<!-- Modal Add Task-->
 	<div class="modal fade" id="add-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
 		data-bs-backdrop="static" data-bs-keyboard="false">
@@ -102,7 +79,8 @@
 						<br>
 						{{!-- start description input text area --}}
 						<div class="form-group">
-							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or think about how we display chore details. --}}
+							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or
+							think about how we display chore details. --}}
 							<textarea class="form-control" id="chore-description-input"
 								placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
 						</div>
@@ -119,7 +97,9 @@
 							</div>
 						</div>
 				</div>
-				<button type="submit" class="btn btn-primary">Save</button>
+				<div class="box-sizing-inherit">
+				<button type="submit" class="btn btn-primary col-4">Save</button>
+</div>
 				</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -128,93 +108,29 @@
 		</div>
 	</div>
 
-	{{!-- begin commenting out. Giving an opportunity for each group member to see what we're deleting, and  
-if we might need this code--}}
-
-	{{!-- Start TODO: DELETE --}}
-
-	{{!-- start of code
-	<div class="container">
-		<div class="CRUD-chores-dashboard">
-			<!-- maybe drop down menu so it doesnt get too cluttered? Make font awesome icon clickable for expand/minimise -->
-			<h2>Chores - Add or Remove <i class="fas fa-arrow-down"></i></h2>
-			<form id="cms">
-				<div class="form-group">
-					<label for="chore-name-title">Add a chore:</label>
-					<input type="text" class="form-control" id="title">
-					<div class="row">
-						<div class="form-group">
-							<label for="category">Select who is assigned this task:</label>
-							<select class="custom-select" id="category">
-								<option value="name1">Didier Drogba</option>
-								<option value="name2">Amelia Earhart</option>
-								<option value="name3">Frida Kahlo</option>
-							</select>
-						</div>
-					</div>
-					<!-- Body Not Needed -->
-					<!-- <br />
-								<label for="body">Body:</label>
-								<textarea class="form-control" rows="10" id="body"></textarea> -->
-					<!-- start chores add section -->
-					<div class="row">
-						<h4>Choose what days to do this chore:</h4>
-						<div class="form-group">
-							<input type="checkbox" name="day1" value="week-interval"> Monday
-							<input type="checkbox" name="day2" value="week-interval"> Tuesday
-							<input type="checkbox" name="day3" value="week-interval" checked> Wednesday
-							<input type="checkbox" name="day4" value="week-interval"> Thursday
-							<input type="checkbox" name="day5" value="week-interval"> Friday
-							<input type="checkbox" name="day6" value="week-interval" checked> Saturday
-							<input type="checkbox" name="day7" value="week-interval"> Sunday
-						</div>
-						<br />
-						<button type="submit" class="btn btn-success submit btn-lg">Submit</button>
-					</div>
-					<h4>Chores Added:</h4>
-					<br>
-					<div class="row">
-						<div class="row">
-							<div class="col-sm-3">
-								<p id="what-is-chore">Walk the dog</p>
-							</div>
-							<div class="col-sm-3">
-								<p id="who-does-chore-name">Frida Kahlo</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-8">
-								<!-- refuse input till "edit pressed" think there is an html way to do this -->
-								<div class="form-group">
-									<input type="checkbox" name="day1" value="week-interval"> Monday
-									<input type="checkbox" name="day2" value="week-interval"> Tuesday
-									<input type="checkbox" name="day3" value="week-interval" checked> Wednesday
-									<input type="checkbox" name="day4" value="week-interval"> Thursday
-									<input type="checkbox" name="day5" value="week-interval"> Friday
-									<input type="checkbox" name="day6" value="week-interval" checked> Saturday
-									<input type="checkbox" name="day7" value="week-interval"> Sunday
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<button class="btn btn-outline-secondary">Edit</button>
-								<button class="btn btn-outline-secondary">Confirm</button>
-							</div>
-						</div>
-					</div>
-					<!-- end chores add section -->
+	{{!-- begin commenting out. Giving an opportunity for each group member to see what we're deleting, and
+	if we might need this code--}}
 
 
-
-
-			</form>
-
-		</div>
-	</div> --}}
-
-	{{!-- END: TODO: DELETE --}}
+	{{!-- delete break add box model --}}
 	<br>
 	<div class="container">
 		<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
+
+		<div class="container">
+			<!-- start Button trigger modal 1 ADD USER -->
+
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
+				<i class="fas fa-plus"></i> ADD Users
+			</button>
+			{{!-- end button 1 modal trigger ADD USER--}}
+
+			<!-- Start button for modal 2: tasks & chores -->
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
+				<i class="fas fa-plus"></i> Tasks & Chores
+			</button>
+			{{!-- end button 2 or modal 2: ADD TASK --}}
+		</div>
 		<div class="columnTitles">
 			<div class="row">
 				<div class="col shadow p-3 mb-5 bg-white rounded">
