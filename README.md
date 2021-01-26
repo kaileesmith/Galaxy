@@ -21,8 +21,8 @@ Galaxy Planning is a full-stack application designed to make household planning 
     - by default npm will install all modules listed as depencies in package.json.
     - if nodemon is not installed globally run npm install nodemon in the command line for this project.
 2. Copy and Paste the schema into MySQL Workbench and run all code.
-3. Launch the application in the command line with `nodemon server.js`
-4. Nodemon will show what localhost the project is launched on. Follow the link.
+3. Launch the application front-end in the command line with `nodemon server.js`
+4. Nodemon will show what localhost the project is launched on (most likely http://localhost:3000/). Follow the link.
 
 ## Technologies:
 
@@ -31,7 +31,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
 - Vanilla JS
 - Heroku
 - Node.js
-- NPM [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()
+- NPM
     - express
     - dotenv
     - bcryptjs
