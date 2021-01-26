@@ -2,19 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 
-body.big-parent {
+.big-parent {
     font-family: 'Roboto', sans-serif;
 	font-size: 17.5px;
 	/* font-weight: 400; */
 	background-position: center;
 	/* background-color: #151515; */
+	height: 100vh;
 }
 
 /* best practice for border box model */
 /* *, *:before, *:after {
   box-sizing: inherit;} */
 
-body.tinted-image {
+.tinted-image {
 	/* background large */
 	background-attachment: fixed;
 	
