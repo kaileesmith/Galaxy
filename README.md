@@ -49,6 +49,12 @@ Galaxy Planning is a full-stack application designed to make household planning 
 
 ## Contributors:
 
+
+####                Sam Ayler [![](https://github.com/sayler3.png?size=50)](https://github.com/sayler3)
+
+<a href="https://github.com/sayler3">         
+  <img src="https://github.com/sayler3.png?size=50">
+</a>
 | Sam Ayler     | Kailee Smith  | Cameron Wright |
 | ------------- | ------------- | -------------  |
 | <a href="https://github.com/sayler3">
