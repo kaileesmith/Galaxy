@@ -8,7 +8,6 @@ Galaxy Planning is a full-stack application designed to make household planning 
 * [Technologies](#technologies)
 * [Standards](#standards)
 * [Contributors](#contributors)
-
 * [License](#license)
 * [Live Deployment & Repo Links](#links)
 * [Contact](#contact)
