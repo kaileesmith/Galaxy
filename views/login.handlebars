@@ -1,30 +1,30 @@
 <div class="big-parent tinted-image">
 	{{>nav-bar}}
-	<div class="text-center box-model-signin">
+	<div class="d-flex justify-content-center form_container">
 		<form class="form-signin login">
-			<!-- if we want an icon we'd uncomment this -->
-			<!-- <img class="mb-4" src="https://www.flaticon.com/premium-icon/icons/svg/1734/1734167.svg" alt width="72"
-				height="72"> -->
-			<label for="inputEmail" class="sr-only">Email address</label>
-			<h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
-			<div class="vertical-input-group">
-				<div class="form-group">
-					<label for="exampleInputEmail1" class="sr-only">Email address</label>
-					<input type="email" class="form-control input-lg" id="email-input" placeholder="Email address"
-						required autofocus />
+			<div class="input-group mb-3">
+				<div class="input-group-append">
+					<span class="input-group-text"><i class="fas fa-user icon"></i></span>
 				</div>
-				<div class="form-group">
-					<label for="inputPassword" class="sr-only">Password</label>
-					<input type="password" class="form-control input-lg" id="password-input" placeholder="Password"
-						required />
-				</div>
+				<label for="exampleInputEmail1" class="sr-only">Email address</label>
+				<input type="email" name="" id="email-input" class="form-control input_user" value=""
+					placeholder="email" required autofocus />
 			</div>
-			<button type="submit" class="btn btn-lg btn-red-custom btn-block">Sign in</button>
+			<div class="input-group mb-2">
+				<div class="input-group-append">
+					<span class="input-group-text"><i class="fas fa-key icon"></i></span>
+				</div>
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input type="password" name="" id="password-input" class="form-control input_pass" value=""
+					placeholder="password" required />
+			</div>
+			<div class="d-flex justify-content-center mt-3 login_container">
+				<button type="submit" name="button" class="btn login_btn">Login</button>
+			</div>
 		</form>
-		<br />
-		<p>Or sign up <a href="/signup">here</a></p>
 	</div>
-	</div>
+</div>
 
-</div>	
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/login.js"></script>
