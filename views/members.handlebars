@@ -136,17 +136,16 @@
 				<div class="modal-body">
 					<form id="cms2" class="addTask">
 						<label for="chore-name-title">Add a chore:</label>
-						<input type="text" class="form-control" id="chore-title-input" placeholder="i.e. Feed Dog">
+						<input type="text" class="form-control" id="chore-title-edit">
 						<br>
 						{{!-- start description input text area --}}
 						<div class="form-group">
 							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or
 							think about how we display chore details. --}}
-							<textarea class="form-control" id="chore-description-input"
-								placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
+							<textarea class="form-control" id="chore-description-edit" rows="3"></textarea>
 						</div>
 						<br>
-						<input type="text" class="form-control" id="chore-title-input" placeholder="i.e. Feed Dog">
+						<input type="text" class="form-control" id="chore-name-edit">
 				</div>
 				<div class="box-sizing-inherit">
 					<button type="submit" class="btn btn-primary col-4">Save</button>
