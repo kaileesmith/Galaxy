@@ -90,6 +90,15 @@ module.exports = function (app) {
 		console.log("stuff happened");
 	});
 
+	// Route to get one task
+	app.get("/api/task/:id", (req, res) => {
+		db.Task.findOne({
+			where: {
+				id: req.params.id,
+			},
+		}).then((dbTask) => res.json(dbTask));
+	});
+
 	// Route to delete a Task
 	app.delete("/api/task/:id", (req, res) => {
 		db.Task.destroy({
