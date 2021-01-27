@@ -103,4 +103,47 @@ $(document).ready(function () {
 			})
 			.catch(handleLoginErr);
 	}
+
+	// Start of edit functionality
+	const editBtn = $("button.edit");
+	const titleEdit = $("input#chore-title-edit").val("new title here");
+	const descriptionEdit = $("textarea#chore-description-edit").val(
+		"new description here"
+	);
+	const memeberEdit = $("input#chore-name-edit").val("new name here");
+
+	editBtn.forEach((button) => {
+		button.addEventListener("click", (e) => {
+			e.preventDefault();
+			console.log("edit button hit");
+		});
+	});
 });
+
+const deleteBtn2 = document.querySelectorAll(".delete2");
+
+// Event listener for button to delete new user
+deleteBtn2.forEach((button) => {
+	button.addEventListener("click", (e) => {
+		e.preventDefault();
+
+		const id = e.currentTarget.getAttribute("data-id");
+		console.log(id);
+		fetch(`/api/task/${id}`, {
+			method: "DELETE",
+		});
+		location.reload("/");
+	});
+});
+
+// Function to delete a task
+function deleteTask(id) {
+	$.delete("/api/task/:id", {
+		id: id,
+	})
+		.then((data) => {
+			console.log("A task was deleted!");
+			location.reload("/");
+		})
+		.console.log("completed");
+}

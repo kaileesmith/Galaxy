@@ -89,6 +89,7 @@
 							<div class="form-group">
 								<label for="category">Select who is assigned this task:</label>
 								<select class="custom-select" id="houseMember">
+									<option value="null">none</option>
 									{{#each data1}}
 									<option value="{{name}}">{{name}}</option>
 									{{/each}}
@@ -97,8 +98,24 @@
 						</div>
 				</div>
 				<div class="box-sizing-inherit">
-				<button type="submit" class="btn btn-primary col-4">Save</button>
-</div>
+					<button type="submit" class="btn btn-primary col-4">Save</button>
+				</div>
+				</form>
+
+				<form id="cms3" class="add3">
+					<h4 class="pt-3">Added tasks/chores:</h4>
+					<hr>
+					<ul class="list-group">
+						{{#each data2}}
+						<li class="list-group-item">
+							{{title}}
+							<button type="button" class="btn btn-outline-warning delete2"
+								data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
+								class="btn btn-outline-secondary edit" data-bs-toggle="modal"
+								data-bs-target="#edit-a-task" data-bs-dismiss="modal">Edit</button>
+						</li>
+						{{/each}}
+					</ul>
 				</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -106,10 +123,41 @@
 			</div>
 		</div>
 	</div>
-
-	{{!-- begin commenting out. Giving an opportunity for each group member to see what we're deleting, and
-	if we might need this code--}}
-
+	{{!-- end modal 2 --}}
+	{{!-- start modal 3 --}}
+	<div class="modal fade" id="edit-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+		data-bs-backdrop="static" data-bs-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Edit Chores & Tasks</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="cms2" class="addTask">
+						<label for="chore-name-title">Add a chore:</label>
+						<input type="text" class="form-control" id="chore-title-edit">
+						<br>
+						{{!-- start description input text area --}}
+						<div class="form-group">
+							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or
+							think about how we display chore details. --}}
+							<textarea class="form-control" id="chore-description-edit" rows="3"></textarea>
+						</div>
+						<br>
+						<input type="text" class="form-control" id="chore-name-edit">
+				</div>
+				<div class="box-sizing-inherit">
+					<button type="submit" class="btn btn-primary col-4">Save</button>
+				</div>
+				</form>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{!-- end modal 3 --}}
 
 	{{!-- delete break add box model --}}
 	<br>
