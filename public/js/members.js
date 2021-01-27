@@ -110,14 +110,15 @@ $(document).ready(function () {
 	const memeberEdit = $("input#chore-name-edit");
 	const editBtn = document.querySelectorAll(".edit");
 	let editData;
+	let choreId;
 
 	editBtn.forEach((button) => {
 		button.addEventListener("click", (e) => {
 			e.preventDefault();
 			console.log("edit button hit");
-			const id = e.currentTarget.getAttribute("data-id");
-			console.log(id);
-			fetch(`/api/task/${id}`, {
+			choreId = e.currentTarget.getAttribute("data-id");
+			console.log(choreId);
+			fetch(`/api/task/${choreId}`, {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",
@@ -125,7 +126,7 @@ $(document).ready(function () {
 			})
 				.then((response) => response.json())
 				.then((data) => {
-					console.log(data);
+					// console.log(data);
 					editData = data;
 					titleEdit.val(editData.title);
 					descriptionEdit.val(editData.description);
@@ -133,6 +134,43 @@ $(document).ready(function () {
 				});
 		});
 	});
+
+	// Saving update
+	const updateTask = $("form.eTask");
+
+	updateTask.on("submit", (e) => {
+		e.preventDefault();
+
+		const updatedTask = {
+			title: titleEdit.val().trim(),
+			description: descriptionEdit.val().trim(),
+			housemember: memeberEdit.val().trim(),
+		};
+		console.log(updatedTask);
+		updateChore(
+			updatedTask.title,
+			updatedTask.description,
+			updatedTask.housemember
+		);
+	});
+
+	function updateChore(title, description, housemember) {
+		$.ajax({
+			url: `/api/task/${choreId}`,
+			data: JSON.stringify({
+				title: title,
+				description: description,
+				housemember: housemember,
+			}),
+			type: "PATCH",
+			contentType: "application/json",
+		})
+			.then((data) => {
+				console.log("A chore has been updated");
+				location.reload("/");
+			})
+			.catch(handleLoginErr);
+	}
 });
 
 const deleteBtn2 = document.querySelectorAll(".delete2");

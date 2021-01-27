@@ -109,7 +109,7 @@ module.exports = function (app) {
 	});
 
 	// Route to update a Task
-	app.patch("/api/task", (req, res) => {
+	app.patch("/api/task/:id", (req, res) => {
 		db.Task.update(
 			{
 				title: req.body.title,
@@ -117,7 +117,7 @@ module.exports = function (app) {
 				housemember: req.body.housemember,
 			},
 			{
-				where: { id: req.body.id },
+				where: { id: req.params.id },
 			}
 		).then(() => res.send("updated!"));
 	});
