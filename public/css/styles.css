@@ -24,14 +24,14 @@
 	background-image: linear-gradient(
 	rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)	),
-	url("https://www.lifesavvy.com/thumbcache/0/0/e85aeb0fabb0cbc4e1bf6d8466a0fa6c/p/uploads/2019/11/658f822e.jpg");
-	
+	/* url("https://www.lifesavvy.com/thumbcache/0/0/e85aeb0fabb0cbc4e1bf6d8466a0fa6c/p/uploads/2019/11/658f822e.jpg"); */
+	url("/img/MarvelPrint-01.png");
 
 	/* img manipulation stretch to page */
 	background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-	background-color: #E4E4E4;
+	background-color: #2b4656;
 
 }
 
