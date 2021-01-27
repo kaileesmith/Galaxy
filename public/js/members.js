@@ -105,7 +105,12 @@ $(document).ready(function () {
 	}
 
 	// Start of edit functionality
-	const editBtn = document.querySelectorAll(".edit");
+	const editBtn = $("button.edit");
+	const titleEdit = $("input#chore-title-edit").val("new title here");
+	const descriptionEdit = $("textarea#chore-description-edit").val(
+		"new description here"
+	);
+	const memeberEdit = $("input#chore-name-edit").val("new name here");
 
 	editBtn.forEach((button) => {
 		button.addEventListener("click", (e) => {
