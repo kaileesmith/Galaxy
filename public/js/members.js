@@ -105,17 +105,32 @@ $(document).ready(function () {
 	}
 
 	// Start of edit functionality
-	const editBtn = $("button.edit");
-	const titleEdit = $("input#chore-title-edit").val("new title here");
-	const descriptionEdit = $("textarea#chore-description-edit").val(
-		"new description here"
-	);
-	const memeberEdit = $("input#chore-name-edit").val("new name here");
+	const titleEdit = $("input#chore-title-edit");
+	const descriptionEdit = $("textarea#chore-description-edit");
+	const memeberEdit = $("input#chore-name-edit");
+	const editBtn = document.querySelectorAll(".edit");
+	let editData;
 
 	editBtn.forEach((button) => {
 		button.addEventListener("click", (e) => {
 			e.preventDefault();
 			console.log("edit button hit");
+			const id = e.currentTarget.getAttribute("data-id");
+			console.log(id);
+			fetch(`/api/task/${id}`, {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					editData = data;
+					titleEdit.val(editData.title);
+					descriptionEdit.val(editData.description);
+					memeberEdit.val(editData.housemember);
+				});
 		});
 	});
 });
