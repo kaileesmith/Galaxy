@@ -72,7 +72,6 @@ $(document).ready(function () {
 	const choreInput = $("input#chore-title-input");
 	const choreDescription = $("textarea#chore-description-input");
 	const memberSelected = $("select#houseMember");
-	
 
 	// Event listener for button to add new task
 
@@ -104,6 +103,16 @@ $(document).ready(function () {
 			})
 			.catch(handleLoginErr);
 	}
+
+	// Start of edit functionality
+	const editBtn = document.querySelectorAll(".edit");
+
+	editBtn.forEach((button) => {
+		button.addEventListener("click", (e) => {
+			e.preventDefault();
+			console.log("edit button hit");
+		});
+	});
 });
 
 const deleteBtn2 = document.querySelectorAll(".delete2");
@@ -133,6 +142,3 @@ function deleteTask(id) {
 		})
 		.console.log("completed");
 }
-
-
-

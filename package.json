@@ -7,17 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/camRight/Galaxy.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/camRight/Galaxy/issues"
-  },
-  "homepage": "https://github.com/camRight/Galaxy#readme",
   "devDependencies": {
     "sequelize-cli": "^6.2.0"
   },
