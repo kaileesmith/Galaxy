@@ -41,8 +41,7 @@
 								<li class="list-group-item">
 									{{name}}
 									<button type="button" class="btn btn-outline-warning delete"
-										data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
-										class="btn btn-outline-secondary">Edit</button>
+										data-id="{{id}}">Delete</button>&nbsp;&nbsp;
 								</li>
 								{{/each}}
 							</ul>
@@ -160,21 +159,25 @@
 {{!-- delete break add box model --}}
 <br>
 <div class="container">
-	<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
+	<div class="col-xl-12 backgroundMain">
+		<div id="backgroundTint">
+	<h2 class="p-3 mb-5 choreTitle">GALAXY PLANNER</h2>
 
 	<div class="container">
 		<!-- start Button trigger modal 1 ADD USER -->
 
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
+		<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#add-a-user">
 			<i class="fas fa-plus"></i> ADD Users
 		</button>
 		{{!-- end button 1 modal trigger ADD USER--}}
 
 		<!-- Start button for modal 2: tasks & chores -->
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
+		<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#add-a-task">
 			<i class="fas fa-plus"></i> Tasks & Chores
 		</button>
 		{{!-- end button 2 or modal 2: ADD TASK --}}
+	</div>
+	</div>
 	</div>
 	<div class="columnTitles">
 		<div class="row">
