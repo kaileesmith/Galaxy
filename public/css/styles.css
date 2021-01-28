@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
+/* comic book font below */
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 .big-parent {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bangers', sans-serif;
 	font-size: 17.5px;
 	/* font-weight: 400; */
 	background-position: center;
@@ -50,23 +51,23 @@
 			height: 100vh;
 			background: rgb(99, 79, 80) !important;
 		}
-		.user_card {
+		/* .user_card {
 			height: 400px;
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
 			/* background: rgb(99, 79, 80, .2); */
-			position: relative;
+			/* position: relative;
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
-			padding: 10px;
+			padding: 10px; */ 
 			/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			border-radius: 5px; */
 
-		}
+		/* } */
 		.brand_logo_container {
 			position: absolute;
 			height: 170px;
@@ -84,7 +85,7 @@
 			border: 2px solid white;
 		}
 		.form_container {
-			margin-top: 100px;
+			margin-top: 275px;
 		}
 		.login_btn {
 			width: 100%;
@@ -173,8 +174,13 @@ div.vertical-input-group {
 	border-radius: .25rem;
 	transition: border-color .15s;
 }
-.form-group {
-		margin-bottom: 0;
+.form-signin {
+	backdrop-filter: blur(8px);
+	border: 3px solid #f1f1f1;
+	padding-top: 25px;
+	padding-right: 18px;
+	padding-bottom: 20px;
+	padding-left: 18px;
 }
 
 .form-signin input[type="email"] {
@@ -223,6 +229,14 @@ button.btn-red-custom {
     transition-timing-function: ease;
     transition-delay: 0s;
 }
+
+/* .fa-key,
+.fa-user {
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+} */
 
 /* Start Tables/Members CSS  */
 
