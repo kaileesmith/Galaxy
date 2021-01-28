@@ -113,31 +113,20 @@
 		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
 			background-color: #c0392b !important;
 		}
-		/* .icon {
-  padding: 10px;
-
-  text-align: center;
-} */
-
-
-
-
-
-
 
 /* manipulate container box-model here */
 div.container-tint-box {
 background: rgba(11, 224, 1, 0.3);
 border: none;
 }
-
+/* 
 #email-input {
 	margin-bottom: 0px;
 }
 
 #password-input {
 	margin-top: 0;
-}
+} */
 
 form.signup,
 form.login {
