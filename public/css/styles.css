@@ -34,20 +34,18 @@ html {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 	background-color: #2b4656;
-
 }
 
 .navbar {
 	width: 100%;
 }
 
-/* login CSS start here */
+/* login/Signup CSS start here */
 
 .form_container {
 	margin-top: 275px;
 }
-.signup_btn,
-.login_btn {
+.form_btn {
 	width: 100%;
 	background: #c0392b !important;
 	color: white !important;
@@ -67,7 +65,14 @@ html {
 	color: white !important;
 	border: 0 !important;
 	border-radius: 0.25rem 0 0 0.25rem !important;
-
+}
+.home-padding {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.password-padding {
+	padding-right: 11px;
+	padding-left: 11px;
 }
 .input_user,
 .input_pass:focus {
@@ -80,29 +85,22 @@ html {
 .signup-text-link {
 	color: white;
 	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-	position: relative;
-	left: -33%;
-	float: right;
-	width: auto;
 	margin-top: 8px;
 }
 
-/* manipulate container box-model here */
-div.container-tint-box {
-background: rgba(11, 224, 1, 0.3);
-border: none;
+.form-header {
+	color: white;
+	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
-/* 
-#email-input {
-	margin-bottom: 0px;
+
+.alert_container {
+	display: none
 }
-#password-input {
-	margin-top: 0;
-} */
 
 form.signup,
 form.login {
-	margin-top: 50px;
+	position: absolute;
+	margin-top: 55px;
 }
 
 .fa-key,
@@ -132,13 +130,13 @@ div.vertical-input-group {
 .form-signin {
 	backdrop-filter: blur(8px);
 	border: 3px solid #f1f1f1;
-	padding-top: 25px;
+	padding-top: 15px;
 	padding-right: 18px;
 	padding-bottom: 15px;
 	padding-left: 18px;
 }
 
-.form-signin input[type="email"] {
+.form-signin input[type="userName"] {
 	margin-bottom: -1;
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
@@ -162,14 +160,14 @@ div.box-sizing-inherit {
 
 }
 
-button.btn-red-custom:hover {
+.btn-red-custom:hover {
 	color: #fff;
 	background-color: #9f0013;
 	/* border-color: #e62429 transparent; */
     opacity: 1;
 }
 
-button.btn-red-custom {
+.btn-red-custom {
 	color: #fff;
 	background-color: #e62429;
     /* border-color: #e62429; */
@@ -180,36 +178,14 @@ button.btn-red-custom {
     transition-delay: 0s;
 }
 
-/* .fa-key,
-.fa-user {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-} */
-
 /* Start Tables/Members CSS  */
-
 
 .choreTitle{
 	font-family: 'Bangers', cursive;
 	text-align: center;
 	font-size: 65px;
-	color: rgb(43, 70, 86);
-	
+	color: rgb(123, 49, 30);
 }
 .columnTitles{
 	font-weight: bold;
-}
-
-.backgroundMain{
-	background-image: url("/img/ironMan.jpg");
-	background-position:initial;
-	background-size: 1300px;
-	
-	
-}
-
-#backgroundTint{
-	background-color: rgba(255, 255, 255,.5);
-	background-blend-mode: multiply;
 }

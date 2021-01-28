@@ -1,39 +1,40 @@
 <div class="big-parent tinted-image">
-	    {{>nav-bar}}
-		<div class="container-sm box-model-signup d-flex justify-content-sm-center">
-			<div class="row ">
-				<div class="col-12 container-tint-box">
-					<div class="jumbotron">
-						<h2>Galaxy Planning</h2>
-						<form class="signup">
-							<div class="form-group">
-								<label for="InputHouseName">House Name</label>
-								<input type="userName" class="form-control" id="house-input" placeholder="House Name" />
-							</div>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Email Address</label>
-								<input type="email" class="form-control" id="email-input" placeholder="Email" />
-							</div>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="password" class="form-control" id="password-input"
-									placeholder="Password" />
-							</div>
-							<div style="display: none" id="alert" class="alert alert-danger" role="alert">
-								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-								<span class="sr-only">Error:</span> <span class="msg"></span>
-							</div>
-							<button type="submit" class="btn btn-lg btn-red-custom btn-block">
-								Sign Up!
-							</button>
-						</form>
-						<br />
-						<p>Or log in <a href="/">here</a></p>
-					</div>
-				</div>
+	{{>nav-bar}}
+	<div class="d-flex justify-content-center form_container">
+		<form class="form-signin signup">
+			<h2 class="d-flex justify-content-center form-header">Sign Up</h2>
+			{{!-- Household Name Start --}}
+			<div class="input-group mb-3">
+				<span class="input-group-text home-padding"><i class="fas fa-home icon"></i></span>
+				<label for="exampleInputEmail1" class="sr-only">Household Name</label>
+				<input type="userName" id="house-input" class="form-control input_user" placeholder="Household Name" 
+					required autofocus />
 			</div>
-		</div>
+			<div class="input-group mb-3">
+				<span class="input-group-text"><i class="fas fa-user icon"></i></span>
+				<label for="exampleInputEmail1" class="sr-only">Email address</label>
+				<input type="email" id="email-input" class="form-control input_user" placeholder="email" 
+					required />
+			</div>
+			<div class="input-group mb-2">
+				<span class="input-group-text password-padding"><i class="fas fa-key icon"></i></span>
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input type="password" id="password-input" class="form-control input_pass" placeholder="password"
+					required />
+			</div>
+			{{!-- alert start --}}
+			<div id="alert" class="alert alert-danger alert_container" role="alert">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				<span class="sr-only">Error:</span> <span class="msg"></span>
+			</div>
+			{{!-- alert end --}}
+			<div class="d-flex justify-content-center mt-3 signup_container">
+				<button type="submit" name="button" class="btn form_btn">Signup</button>
+			</div>
+			<a class="d-flex justify-content-center signup-text-link" href="/">or login here</a>
+		</form>
+	</div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="../js/signup.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/signup.js"></script>
 </div>
