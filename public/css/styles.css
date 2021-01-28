@@ -96,7 +96,6 @@ border: none;
 #email-input {
 	margin-bottom: 0px;
 }
-
 #password-input {
 	margin-top: 0;
 } */
@@ -183,7 +182,6 @@ button.btn-red-custom {
 
 /* .fa-key,
 .fa-user {
-
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -191,12 +189,27 @@ button.btn-red-custom {
 
 /* Start Tables/Members CSS  */
 
+
 .choreTitle{
 	font-family: 'Bangers', cursive;
 	text-align: center;
 	font-size: 65px;
-	color: rgb(123, 49, 30);
+	color: rgb(43, 70, 86);
+	
 }
 .columnTitles{
 	font-weight: bold;
+}
+
+.backgroundMain{
+	background-image: url("/img/ironMan.jpg");
+	background-position:initial;
+	background-size: 1300px;
+	
+	
+}
+
+#backgroundTint{
+	background-color: rgba(255, 255, 255,.5);
+	background-blend-mode: multiply;
 }

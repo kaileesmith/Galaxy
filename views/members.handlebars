@@ -11,7 +11,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h3 class="modal-title" id="staticBackdropLabel">Add Household Members</h3>
+				<h3 class="modal-title" id="staticBackdropLabel">Add Household Users</h3>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -25,7 +25,7 @@
 								<input type="text" class="form-control" placeholder="i.e. Frida Kahlo" id="name-input">
 								{{!-- end ADD USER text form --}}
 								<div class="input-group-append">
-									<button type="submit" class="btn btn-primary">Submit</button>
+									<button type="submit" class="btn btn-outline-primary">Submit</button>
 								</div>
 							</div>
 						</form>
@@ -41,8 +41,7 @@
 								<li class="list-group-item">
 									{{name}}
 									<button type="button" class="btn btn-outline-warning delete"
-										data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
-										class="btn btn-outline-secondary">Edit</button>
+										data-id="{{id}}">Delete</button>&nbsp;&nbsp;
 								</li>
 								{{/each}}
 							</ul>
@@ -82,10 +81,11 @@
 						<textarea class="form-control" id="chore-description-input"
 							placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
 					</div>
+					<br>
 					{{!-- end description input --}}
 					<div class="row">
 						<div class="form-group">
-							<label for="category">Select who is assigned this task:</label>
+							<label for="category">Select who is assigned this chore:</label>
 							<select class="custom-select" id="houseMember">
 								<option value="null">none</option>
 								{{#each data1}}
@@ -96,25 +96,26 @@
 					</div>
 			</div>
 			<div class="box-sizing-inherit">
-				<button type="submit" class="btn btn-primary col-4">Save</button>
+				<button type="submit" class="btn btn-outline-primary col-4">Save</button>
 			</div>
 			</form>
-
-			<form id="cms3" class="add3">
-				<h4 class="pt-3">Added tasks/chores:</h4>
-				<hr>
-				<ul class="list-group">
-					{{#each data2}}
-					<li class="list-group-item">
-						{{title}}
-						<button type="button" class="btn btn-outline-warning delete2"
-							data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
-							class="btn btn-outline-secondary edit" data-bs-toggle="modal" data-bs-target="#edit-a-task"
-							data-bs-dismiss="modal" data-id="{{id}}">Edit</button>
-					</li>
-					{{/each}}
-				</ul>
-			</form>
+			<div class="container">
+				<form id="cms3" class="add3">
+					<h4 class="pt-3">Added tasks/chores:</h4>
+					<hr>
+					<ul class="list-group">
+						{{#each data2}}
+						<li class="list-group-item">
+							{{title}}
+							<button type="button" class="btn btn-outline-warning delete2"
+								data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
+								class="btn btn-outline-secondary edit" data-bs-toggle="modal"
+								data-bs-target="#edit-a-task" data-bs-dismiss="modal" data-id="{{id}}">Edit</button>
+						</li>
+						{{/each}}
+					</ul>
+				</form>
+			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 			</div>
@@ -133,7 +134,7 @@
 			</div>
 			<div class="modal-body">
 				<form id="cms2" class="eTask">
-					<label for="chore-name-title">Add a chore:</label>
+					<label for="chore-name-title">Eidt a chore:</label>
 					<input type="text" class="form-control" id="chore-title-edit">
 					<br>
 					{{!-- start description input text area --}}
@@ -146,7 +147,7 @@
 					<input type="text" class="form-control" id="chore-name-edit">
 			</div>
 			<div class="box-sizing-inherit">
-				<button type="submit" class="btn btn-primary col-4" id="updateTask">Save</button>
+				<button type="submit" class="btn btn-outline-primary col-4" id="updateTask">Save</button>
 			</div>
 			</form>
 			<div class="modal-footer">
@@ -160,21 +161,25 @@
 {{!-- delete break add box model --}}
 <br>
 <div class="container">
-	<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
+	<div class="col-xl-12 backgroundMain">
+		<div id="backgroundTint">
+			<h2 class="p-3 mb-5 choreTitle">GALAXY PLANNER</h2>
 
-	<div class="container">
-		<!-- start Button trigger modal 1 ADD USER -->
+			<div class="container">
+				<!-- start Button trigger modal 1 ADD USER -->
 
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
-			<i class="fas fa-plus"></i> ADD Users
-		</button>
-		{{!-- end button 1 modal trigger ADD USER--}}
+				<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#add-a-user">
+					<i class="fas fa-plus"></i> Users
+				</button>
+				{{!-- end button 1 modal trigger ADD USER--}}
 
-		<!-- Start button for modal 2: tasks & chores -->
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
-			<i class="fas fa-plus"></i> Tasks & Chores
-		</button>
-		{{!-- end button 2 or modal 2: ADD TASK --}}
+				<!-- Start button for modal 2: tasks & chores -->
+				<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#add-a-task">
+					<i class="fas fa-plus"></i> Tasks & Chores
+				</button>
+				{{!-- end button 2 or modal 2: ADD TASK --}}
+			</div>
+		</div>
 	</div>
 	<div class="columnTitles">
 		<div class="row">
