@@ -37,8 +37,6 @@ module.exports = function (app) {
 				Task = dbTask;
 				allData.data2 = Task;
 
-				console.log(allData);
-
 				res.render("members", allData);
 			});
 		});
