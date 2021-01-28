@@ -7,6 +7,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
 * [Installation](#installation)
 * [Technologies](#technologies)
 * [Standards](#standards)
+* [Images](#images)
 * [Contributors](#contributors)
 * [License](#license)
 * [Live Deployment & Repo Links](#links)
@@ -47,7 +48,9 @@ Galaxy Planning is a full-stack application designed to make household planning 
 
 - Meets MVC Folder Structure Paradigm Standards
 
+## Images
 
+![Example picture of main interface](public/img/Galaxy-example.JPG)
 
 ## Contributors
 
@@ -81,3 +84,4 @@ Live Deployment: https://galaxy-planner.herokuapp.com/
 - YOUR NAME HERE
     - EMAIL:
     - GITHUB
+
