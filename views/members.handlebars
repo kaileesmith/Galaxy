@@ -1,213 +1,211 @@
+<nav class="navbar navbar-dark bg-dark ">
+	<div class="container-fluid d-flex flex-row">
+		<span class="navbar-brand justify-content-start">Welcome to <span class="member-name"></span></span>
+		<a class="navbar-brand justify-content-end" href="/logout"> Logout </a>
+	</div>
+</nav>
 
-	<nav class="navbar navbar-dark bg-dark ">
-		<div class="container-fluid d-flex flex-row">
-			<span class="navbar-brand justify-content-start">Welcome to <span class="member-name"></span></span>
-			<a class="navbar-brand justify-content-end" href="/logout"> Logout </a>
-		</div>
-	</nav>
+<!-- Modal 1 -->
+<div class="modal fade" id="add-a-user" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+	aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="staticBackdropLabel">Add Household Members</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="CRUD-user-dashboard">
+						{{!-- start ADD USER form --}}
+						<form id="cms1" class="add">
+							<div class="input-group">
 
-	<!-- Modal 1 -->
-	<div class="modal fade" id="add-a-user" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-		aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h3 class="modal-title" id="staticBackdropLabel">Add Household Members</h3>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="container">
-						<div class="CRUD-user-dashboard">
-							{{!-- start ADD USER form --}}
-							<form id="cms1" class="add">
-								<div class="input-group">
-
-									{{!-- start ADD USER text/input form --}}
-									<input type="text" class="form-control" placeholder="i.e. Frida Kahlo"
-										id="name-input">
-									{{!-- end ADD USER text form --}}
-									<div class="input-group-append">
-										<button type="submit" class="btn btn-primary">Submit</button>
-									</div>
+								{{!-- start ADD USER text/input form --}}
+								<input type="text" class="form-control" placeholder="i.e. Frida Kahlo" id="name-input">
+								{{!-- end ADD USER text form --}}
+								<div class="input-group-append">
+									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
-							</form>
-							{{!-- end input form group --}}
-							{{!-- should form end here? --}}
-							{{!-- start user db history --}}
+							</div>
+						</form>
+						{{!-- end input form group --}}
+						{{!-- should form end here? --}}
+						{{!-- start user db history --}}
 
-							<form id="cms2" class="add2">
-								<h4 class="pt-3">Added users:</h4>
-								<hr>
-								<ul class="list-group">
-									{{#each data1}}
-									<li class="list-group-item">
-										{{name}}
-										<button type="button" class="btn btn-outline-warning delete"
-											data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
-											class="btn btn-outline-secondary">Edit</button>
-									</li>
-									{{/each}}
-								</ul>
-							</form>
-							{{!-- end ADD USER form --}}
-						</div>
+						<form id="cms2" class="add2">
+							<h4 class="pt-3">Added users:</h4>
+							<hr>
+							<ul class="list-group">
+								{{#each data1}}
+								<li class="list-group-item">
+									{{name}}
+									<button type="button" class="btn btn-outline-warning delete"
+										data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
+										class="btn btn-outline-secondary">Edit</button>
+								</li>
+								{{/each}}
+							</ul>
+						</form>
+						{{!-- end ADD USER form --}}
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-				</div>
 			</div>
 		</div>
 	</div>
-	{{!-- end modal 1 --}}
+</div>
+{{!-- end modal 1 --}}
 
-	{{!-- start modal 2 --}}
-	<!-- Modal Add Task-->
-	<div class="modal fade" id="add-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-		data-bs-backdrop="static" data-bs-keyboard="false">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Chores & Tasks</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<form id="cms2" class="addTask">
-						<label for="chore-name-title">Add a chore:</label>
-						<input type="text" class="form-control" id="chore-title-input" placeholder="i.e. Feed Dog">
-						<br>
-						{{!-- start description input text area --}}
-						<div class="form-group">
-							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or
+{{!-- start modal 2 --}}
+<!-- Modal Add Task-->
+<div class="modal fade" id="add-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+	data-bs-backdrop="static" data-bs-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Chores & Tasks</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="cms2" class="addTask">
+					<label for="chore-name-title">Add a chore:</label>
+					<input type="text" class="form-control" id="chore-title-input" placeholder="i.e. Feed Dog">
+					<br>
+					{{!-- start description input text area --}}
+					<div class="form-group">
+						{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or
 							think about how we display chore details. --}}
-							<textarea class="form-control" id="chore-description-input"
-								placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
-						</div>
-						{{!-- end description input --}}
-						<div class="row">
-							<div class="form-group">
-								<label for="category">Select who is assigned this task:</label>
-								<select class="custom-select" id="houseMember">
-									<option value="null">none</option>
-									{{#each data1}}
-									<option value="{{name}}">{{name}}</option>
-									{{/each}}
-								</select>
-							</div>
-						</div>
-				</div>
-				<div class="box-sizing-inherit">
-					<button type="submit" class="btn btn-primary col-4">Save</button>
-				</div>
-				</form>
-
-				<form id="cms3" class="add3">
-					<h4 class="pt-3">Added tasks/chores:</h4>
-					<hr>
-					<ul class="list-group">
-						{{#each data2}}
-						<li class="list-group-item">
-							{{title}}
-							<button type="button" class="btn btn-outline-warning delete2"
-								data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
-								class="btn btn-outline-secondary edit" data-bs-toggle="modal"
-								data-bs-target="#edit-a-task" data-bs-dismiss="modal" data-id="{{id}}">Edit</button>
-						</li>
-						{{/each}}
-					</ul>
-				</form>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	{{!-- end modal 2 --}}
-	{{!-- start modal 3 --}}
-	<div class="modal fade" id="edit-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-		data-bs-backdrop="static" data-bs-keyboard="false">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Edit Chores & Tasks</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<form id="cms2" class="eTask">
-						<label for="chore-name-title">Add a chore:</label>
-						<input type="text" class="form-control" id="chore-title-edit">
-						<br>
-						{{!-- start description input text area --}}
+						<textarea class="form-control" id="chore-description-input"
+							placeholder="i.e. Feed Mittens one-third a cup of kibble..." rows="3"></textarea>
+					</div>
+					{{!-- end description input --}}
+					<div class="row">
 						<div class="form-group">
-							{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or
-							think about how we display chore details. --}}
-							<textarea class="form-control" id="chore-description-edit" rows="3"></textarea>
+							<label for="category">Select who is assigned this task:</label>
+							<select class="custom-select" id="houseMember">
+								<option value="null">none</option>
+								{{#each data1}}
+								<option value="{{name}}">{{name}}</option>
+								{{/each}}
+							</select>
 						</div>
-						<br>
-						<input type="text" class="form-control" id="chore-name-edit">
-				</div>
-				<div class="box-sizing-inherit">
-					<button type="submit" class="btn btn-primary col-4" id="updateTask">Save</button>
-				</div>
-				</form>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				</div>
+					</div>
+			</div>
+			<div class="box-sizing-inherit">
+				<button type="submit" class="btn btn-primary col-4">Save</button>
+			</div>
+			</form>
+
+			<form id="cms3" class="add3">
+				<h4 class="pt-3">Added tasks/chores:</h4>
+				<hr>
+				<ul class="list-group">
+					{{#each data2}}
+					<li class="list-group-item">
+						{{title}}
+						<button type="button" class="btn btn-outline-warning delete2"
+							data-id="{{id}}">Delete</button>&nbsp;&nbsp;<button type="button"
+							class="btn btn-outline-secondary edit" data-bs-toggle="modal" data-bs-target="#edit-a-task"
+							data-bs-dismiss="modal" data-id="{{id}}">Edit</button>
+					</li>
+					{{/each}}
+				</ul>
+			</form>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
-	{{!-- end modal 3 --}}
+</div>
+{{!-- end modal 2 --}}
+{{!-- start modal 3 --}}
+<div class="modal fade" id="edit-a-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+	data-bs-backdrop="static" data-bs-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Edit Chores & Tasks</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="cms2" class="eTask">
+					<label for="chore-name-title">Add a chore:</label>
+					<input type="text" class="form-control" id="chore-title-edit">
+					<br>
+					{{!-- start description input text area --}}
+					<div class="form-group">
+						{{!-- NOTE: user can break lines using enter in text area. consider making 1 line only, or
+							think about how we display chore details. --}}
+						<textarea class="form-control" id="chore-description-edit" rows="3"></textarea>
+					</div>
+					<br>
+					<input type="text" class="form-control" id="chore-name-edit">
+			</div>
+			<div class="box-sizing-inherit">
+				<button type="submit" class="btn btn-primary col-4" id="updateTask">Save</button>
+			</div>
+			</form>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+{{!-- end modal 3 --}}
 
-	{{!-- delete break add box model --}}
-	<br>
+{{!-- delete break add box model --}}
+<br>
+<div class="container">
+	<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
+
 	<div class="container">
-		<h2 class="shadow p-3 mb-5 bg-white rounded choreTitle">Chore Planner</h2>
+		<!-- start Button trigger modal 1 ADD USER -->
 
-		<div class="container">
-			<!-- start Button trigger modal 1 ADD USER -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
+			<i class="fas fa-plus"></i> ADD Users
+		</button>
+		{{!-- end button 1 modal trigger ADD USER--}}
 
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-user">
-				<i class="fas fa-plus"></i> ADD Users
-			</button>
-			{{!-- end button 1 modal trigger ADD USER--}}
-
-			<!-- Start button for modal 2: tasks & chores -->
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
-				<i class="fas fa-plus"></i> Tasks & Chores
-			</button>
-			{{!-- end button 2 or modal 2: ADD TASK --}}
-		</div>
-		<div class="columnTitles">
-			<div class="row">
-				<div class="col shadow p-3 mb-5 bg-white rounded">
-					Chores
-				</div>
-				<div class="col shadow p-3 mb-5 bg-white rounded">
-					House Member Assigned
-				</div>
-				<div class="col-5 shadow p-3 mb-5 bg-white rounded">
-					Chore Details
-				</div>
+		<!-- Start button for modal 2: tasks & chores -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-a-task">
+			<i class="fas fa-plus"></i> Tasks & Chores
+		</button>
+		{{!-- end button 2 or modal 2: ADD TASK --}}
+	</div>
+	<div class="columnTitles">
+		<div class="row">
+			<div class="col shadow p-3 mb-5 bg-white rounded">
+				Chores
+			</div>
+			<div class="col shadow p-3 mb-5 bg-white rounded">
+				House Member Assigned
+			</div>
+			<div class="col-5 shadow p-3 mb-5 bg-white rounded">
+				Chore Details
 			</div>
 		</div>
+	</div>
 
-		{{#each data2}}
-		<div class="container">
-			<div class="row">
-				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-					<p>{{title}}</p>
-				</div>
-				<div class="col shadow-sm p-3 mb-5 bg-white rounded">
-					<p>{{housemember}}</p>
-				</div>
-				<div class="col-5 shadow-sm p-3 mb-5 bg-white rounded">
-					<p>{{description}}</p>
-				</div>
+	{{#each data2}}
+	<div class="container">
+		<div class="row">
+			<div class="col shadow-sm p-3 mb-5 bg-white rounded">
+				<p>{{title}}</p>
+			</div>
+			<div class="col shadow-sm p-3 mb-5 bg-white rounded">
+				<p>{{housemember}}</p>
+			</div>
+			<div class="col-5 shadow-sm p-3 mb-5 bg-white rounded">
+				<p>{{description}}</p>
 			</div>
 		</div>
-		{{/each}}
+	</div>
+	{{/each}}
 
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="../js/members.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/members.js"></script>
