@@ -1,4 +1,9 @@
 $(document).ready(function () {
+	// Setting up for modal to stay rendered on member add
+	if (localStorage.getItem("screen")) {
+		$("#add-a-user").modal("show");
+		localStorage.clear();
+	}
 	// This file just does a GET request to figure out which user is logged in
 	// and updates the HTML on the page
 	$.get("/api/user_data").then(function (data) {
@@ -19,7 +24,20 @@ $(document).ready(function () {
 
 		inputUser(userData.name);
 		nameInput.val("");
+		localStorage.setItem("screen", JSON.stringify({ k: "anything" }));
 	});
+
+	// Function to add new user
+	function inputUser(name) {
+		$.post("/api/housemember", {
+			name: name,
+		})
+			.then((data) => {
+				alert("A new user has been added!");
+				location.reload();
+			})
+			.catch(handleLoginErr);
+	}
 
 	// Event listener for button to delete new user
 	deleteBtn.forEach((button) => {
@@ -32,33 +50,10 @@ $(document).ready(function () {
 			fetch(`/api/housemember/${id}`, {
 				method: "DELETE",
 			});
+			localStorage.setItem("screen", JSON.stringify({ k: "anything" }));
 			location.reload("/");
 		});
 	});
-
-	// Function to add new user
-	function inputUser(name) {
-		$.post("/api/housemember", {
-			name: name,
-		})
-			.then((data) => {
-				console.log("A new user has been added!");
-				location.reload("/");
-			})
-			.catch(handleLoginErr);
-	}
-
-	// Function to delete a user
-	function deleteUser(id) {
-		$.delete("/api/housemember/:id", {
-			id: id,
-		})
-			.then((data) => {
-				console.log("A user was deleted!");
-				location.reload("/");
-			})
-			.catch(handleLoginErr);
-	}
 
 	function handleLoginErr(err) {
 		$("#alert .msg").text(err.responseJSON);
@@ -105,45 +100,85 @@ $(document).ready(function () {
 	}
 
 	// Start of edit functionality
-	const editBtn = $("button.edit");
-	const titleEdit = $("input#chore-title-edit").val("new title here");
-	const descriptionEdit = $("textarea#chore-description-edit").val(
-		"new description here"
-	);
-	const memeberEdit = $("input#chore-name-edit").val("new name here");
+	const titleEdit = $("input#chore-title-edit");
+	const descriptionEdit = $("textarea#chore-description-edit");
+	const memeberEdit = $("input#chore-name-edit");
+	const editBtn = document.querySelectorAll(".edit");
+	let editData;
+	let choreId;
 
 	editBtn.forEach((button) => {
 		button.addEventListener("click", (e) => {
 			e.preventDefault();
 			console.log("edit button hit");
+			choreId = e.currentTarget.getAttribute("data-id");
+			console.log(choreId);
+			fetch(`/api/task/${choreId}`, {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					editData = data;
+					titleEdit.val(editData.title);
+					descriptionEdit.val(editData.description);
+					memeberEdit.val(editData.housemember);
+				});
 		});
 	});
-});
 
-const deleteBtn2 = document.querySelectorAll(".delete2");
+	// Saving update
+	const updateTask = $("form.eTask");
 
-// Event listener for button to delete new user
-deleteBtn2.forEach((button) => {
-	button.addEventListener("click", (e) => {
+	updateTask.on("submit", (e) => {
 		e.preventDefault();
 
-		const id = e.currentTarget.getAttribute("data-id");
-		console.log(id);
-		fetch(`/api/task/${id}`, {
-			method: "DELETE",
+		const updatedTask = {
+			title: titleEdit.val().trim(),
+			description: descriptionEdit.val().trim(),
+			housemember: memeberEdit.val().trim(),
+		};
+		console.log(updatedTask);
+		updateChore(
+			updatedTask.title,
+			updatedTask.description,
+			updatedTask.housemember
+		);
+	});
+
+	function updateChore(title, description, housemember) {
+		$.ajax({
+			url: `/api/task/${choreId}`,
+			data: JSON.stringify({
+				title: title,
+				description: description,
+				housemember: housemember,
+			}),
+			type: "PATCH",
+			contentType: "application/json",
+		})
+			.then((data) => {
+				console.log("A chore has been updated");
+				location.reload("/");
+			})
+			.catch(handleLoginErr);
+	}
+
+	const deleteBtn2 = document.querySelectorAll(".delete2");
+
+	// Event listener for button to delete new user
+	deleteBtn2.forEach((button) => {
+		button.addEventListener("click", (e) => {
+			e.preventDefault();
+
+			const id = e.currentTarget.getAttribute("data-id");
+			console.log(id);
+			fetch(`/api/task/${id}`, {
+				method: "DELETE",
+			});
+			location.reload("/");
 		});
-		location.reload("/");
 	});
 });
-
-// Function to delete a task
-function deleteTask(id) {
-	$.delete("/api/task/:id", {
-		id: id,
-	})
-		.then((data) => {
-			console.log("A task was deleted!");
-			location.reload("/");
-		})
-		.console.log("completed");
-}
