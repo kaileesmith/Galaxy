@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 /* comic book font below */
 @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
+html {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	background: rgb(99, 79, 80) !important;
+	}
 .big-parent {
     font-family: 'Bangers', sans-serif;
 	font-size: 17.5px;
-	/* font-weight: 400; */
 	background-position: center;
-	/* background-color: #151515; */
 	height: 100vh;
 	text-transform: uppercase;
 }
-
-/* best practice for border box model */
-/* *, *:before, *:after {
-  box-sizing: inherit;} */
 
 .tinted-image {
 	/* background large */
@@ -25,7 +27,6 @@
 	background-image: linear-gradient(
 	rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)	),
-	/* url("https://www.lifesavvy.com/thumbcache/0/0/e85aeb0fabb0cbc4e1bf6d8466a0fa6c/p/uploads/2019/11/658f822e.jpg"); */
 	url("/img/MarvelPrint-01.png");
 
 	/* img manipulation stretch to page */
@@ -42,77 +43,49 @@
 
 /* login CSS start here */
 
+.form_container {
+	margin-top: 275px;
+}
+.signup_btn,
+.login_btn {
+	width: 100%;
+	background: #c0392b !important;
+	color: white !important;
+}
+.signup_btn
+.login_btn:focus {
+	box-shadow: none !important;
+	outline: 0px !important;
+}
+.signup_container,
+.login_container {
+	padding: 0 2rem;
+}
+.input-group-text {
+	background: #c0392b !important;
+	height: 38px;
+	color: white !important;
+	border: 0 !important;
+	border-radius: 0.25rem 0 0 0.25rem !important;
 
-
-
-		html {
-			margin: 0;
-			padding: 0;
-			height: 100vh;
-			background: rgb(99, 79, 80) !important;
-		}
-		/* .user_card {
-			height: 400px;
-			width: 350px;
-			margin-top: auto;
-			margin-bottom: auto;
-			/* background: rgb(99, 79, 80, .2); */
-			/* position: relative;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			padding: 10px; */ 
-			/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			border-radius: 5px; */
-
-		/* } */
-		.brand_logo_container {
-			position: absolute;
-			height: 170px;
-			width: 170px;
-			top: -75px;
-			border-radius: 50%;
-			/* background: #60a3bc; */
-			padding: 10px;
-			text-align: center;
-		}
-		.brand_logo {
-			height: 150px;
-			width: 150px;
-			border-radius: 50%;
-			border: 2px solid white;
-		}
-		.form_container {
-			margin-top: 275px;
-		}
-		.login_btn {
-			width: 100%;
-			background: #c0392b !important;
-			color: white !important;
-		}
-		.login_btn:focus {
-			box-shadow: none !important;
-			outline: 0px !important;
-		}
-		.login_container {
-			padding: 0 2rem;
-		}
-		.input-group-text {
-			background: #c0392b !important;
-			color: white !important;
-			border: 0 !important;
-			border-radius: 0.25rem 0 0 0.25rem !important;
-		}
-		.input_user,
-		.input_pass:focus {
-			box-shadow: none !important;
-			outline: 0px !important;
-		}
-		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-			background-color: #c0392b !important;
-		}
+}
+.input_user,
+.input_pass:focus {
+	box-shadow: none !important;
+	outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+	background-color: #c0392b !important;
+}
+.signup-text-link {
+	color: white;
+	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+	position: relative;
+	left: -33%;
+	float: right;
+	width: auto;
+	margin-top: 8px;
+}
 
 /* manipulate container box-model here */
 div.container-tint-box {
@@ -133,16 +106,10 @@ form.login {
 	margin-top: 50px;
 }
 
-div.box-model-signin {
-	margin: 0 auto;
-	padding: 15px;
-	width: 100%;
-	max-width: 330px;
-	max-height: 430px
-}
-
-div.box-model-signup {
-	margin-top: 250px;
+.fa-key,
+.fa-user {
+	padding-top: 11;
+	padding-bottom: 11;
 }
 
 #email-input {
@@ -168,7 +135,7 @@ div.vertical-input-group {
 	border: 3px solid #f1f1f1;
 	padding-top: 25px;
 	padding-right: 18px;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 	padding-left: 18px;
 }
 
@@ -187,11 +154,6 @@ div.vertical-input-group {
 .btn-red-custom {
 	font-size: 1.5rem;
 	line-height: 1.5;
-}
-
-.text-bigly {
-	text-transform: uppercase;
-	color: white;
 }
 
 div.box-sizing-inherit {
