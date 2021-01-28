@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 .big-parent {
     font-family: 'Roboto', sans-serif;
@@ -48,7 +48,8 @@
 			margin: 0;
 			padding: 0;
 			height: 100vh;
-			background: rgb(99, 79, 80) !important;
+			/* background: rgb(99, 79, 80) !important; */
+
 		}
 		.user_card {
 			height: 400px;
@@ -230,8 +231,22 @@ button.btn-red-custom {
 	font-family: 'Bangers', cursive;
 	text-align: center;
 	font-size: 65px;
-	color: rgb(123, 49, 30);
+	color: rgb(43, 70, 86);
+	
 }
 .columnTitles{
 	font-weight: bold;
+}
+
+.backgroundMain{
+	background-image: url("/img/ironMan.jpg");
+	background-position:initial;
+	background-size: 1300px;
+	
+	
+}
+
+#backgroundTint{
+	background-color: rgba(255, 255, 255,.5);
+	background-blend-mode: multiply;
 }
