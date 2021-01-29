@@ -1,6 +1,6 @@
 # Galaxy
 
-Galaxy Planning is a full-stack application designed to make household planning easier. A user or users can keep track of what chores each person is responsible for. All credentials are protected with encryption. A Sequelize ORM coupled with GET and POST enables server-side CRUD functionality.  
+[Galaxy Planning](https://galaxy-planner.herokuapp.com/)Galaxy Planning is a full-stack application designed to make household planning easier. A user or users can keep track of what chores each person is responsible for. All credentials are protected with encryption. A Sequelize ORM coupled with GET and POST enables server-side CRUD functionality.  
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ Galaxy Planning is a full-stack application designed to make household planning 
         - global nodemon install code: `npm install nodemon -g`
 2. Copy and Paste the schema into MySQL Workbench and run all code.
 3. Launch the application front-end in the command line with `nodemon server.js`
-4. Nodemon will show what localhost the project is launched on (most likely http://localhost:3000/). Follow the link.
+4. Nodemon will show what localhost the project is launched on (most likely http://localhost:8080/). Follow the link.
 
 ## Technologies
 
