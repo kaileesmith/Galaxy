@@ -33,7 +33,7 @@ $(document).ready(function () {
 			name: name,
 		})
 			.then((data) => {
-				console("A new user has been added!");
+				console.log("A new user has been added!");
 				location.reload();
 			})
 			.catch(handleLoginErr);
