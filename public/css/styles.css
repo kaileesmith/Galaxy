@@ -40,8 +40,7 @@ html {
 /* TODO: responsive desktop vertical
 sizing just below CPT America's neck/chest */
 .form_container {
-	align-items: end;
-	/* margin-top: 300px; */
+	margin-top: 300px;
 }
 .form_btn {
 	width: 100%;
