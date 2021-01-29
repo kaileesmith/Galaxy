@@ -37,8 +37,11 @@ html {
 
 /* login/Signup CSS start here */
 
+/* TODO: responsive desktop vertical
+sizing just below CPT America's neck/chest */
 .form_container {
-	margin-top: 400px;
+	align-items: end;
+	/* margin-top: 300px; */
 }
 .form_btn {
 	width: 100%;
