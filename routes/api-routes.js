@@ -63,6 +63,7 @@ module.exports = function (app) {
 	app.post("/api/housemember", (req, res) => {
 		db.HouseMember.create({
 			name: req.body.name,
+			UserId: req.body.UserId,
 		}).then((dbHouseMember) => res.json(dbHouseMember));
 	});
 
@@ -81,6 +82,7 @@ module.exports = function (app) {
 			title: req.body.title,
 			description: req.body.description,
 			housemember: req.body.housemember,
+			UserId: req.body.UserId,
 		}).then((dbTask) => res.json(dbTask));
 	});
 

@@ -24,7 +24,11 @@ module.exports = (sequelize, DataTypes) => {
 	);
 
 	Task.associate = (models) => {
-		Task.belongsTo(models.User);
+		Task.belongsTo(models.User, {
+			foreignKey: {
+				allowNull: false,
+			},
+		});
 	};
 	return Task;
 };

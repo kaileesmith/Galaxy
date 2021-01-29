@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	let currentUserId;
 	// Setting up for modal to stay rendered on member add
 	if (localStorage.getItem("screen")) {
 		$("#add-a-user").modal("show");
@@ -8,6 +9,7 @@ $(document).ready(function () {
 	// and updates the HTML on the page
 	$.get("/api/user_data").then(function (data) {
 		$(".member-name").text(data.housename);
+		currentUserId = data.id;
 	});
 
 	// Getting references to our form and input
@@ -20,17 +22,19 @@ $(document).ready(function () {
 		e.preventDefault();
 		const userData = {
 			name: nameInput.val().trim(),
+			UserId: currentUserId,
 		};
-
-		inputUser(userData.name);
+		console.log(userData);
+		inputUser(userData.name, userData.UserId);
 		nameInput.val("");
 		localStorage.setItem("screen", JSON.stringify({ k: "anything" }));
 	});
 
 	// Function to add new user
-	function inputUser(name) {
+	function inputUser(name, id) {
 		$.post("/api/housemember", {
 			name: name,
+			UserId: id,
 		})
 			.then((data) => {
 				console.log("A new user has been added!");
@@ -77,20 +81,27 @@ $(document).ready(function () {
 			title: choreInput.val().trim(),
 			description: choreDescription.val().trim(),
 			housemember: memberSelected.val(),
+			UserId: currentUserId,
 		};
 		console.log(taskData);
 
-		addChore(taskData.title, taskData.description, taskData.housemember);
+		addChore(
+			taskData.title,
+			taskData.description,
+			taskData.housemember,
+			taskData.UserId
+		);
 		choreInput.val("");
 		choreDescription.val("");
 	});
 
 	// Function to add a task
-	function addChore(title, description, housemember) {
+	function addChore(title, description, housemember, id) {
 		$.post("/api/task", {
 			title: title,
 			description: description,
 			housemember: housemember,
+			UserId: id,
 		})
 			.then((data) => {
 				console.log("A new chore has been added");
