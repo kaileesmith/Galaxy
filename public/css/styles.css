@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-/* comic book font below */
-@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 html {
 	margin: 0;
@@ -105,13 +103,6 @@ form.login {
 	padding-bottom: 11;
 }
 
-#email-input {
-	line-height: 1.5;
-}
-div.vertical-input-group {
-	line-height: 1.5;
-	margin-bottom: 15px;
-}
 .form-control {
 	display: block;
 	width: 100%;
@@ -144,8 +135,12 @@ div.vertical-input-group {
 	border-top-right-radius: 0;
 }
 
-
 /* Start Tables/Members CSS  */
+
+.fonts-import {
+	font-family: 'Bangers', sans-serif;
+}
+
 
 .chore-title {
 	font-family: 'Bangers', cursive;
@@ -158,8 +153,12 @@ div.vertical-input-group {
 	margin-bottom: 30px !important;
 }
 .column-titles {
-	font-weight: bold;
+	height: 80px;
+	font-weight: 650;
 	margin-top: 4px;
+	line-height: 1rem;
+	letter-spacing: .045em;
+	font-size: larger;
 }
 
 .background-main {
