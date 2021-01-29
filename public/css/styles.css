@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-/* comic book font below */
-@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 html {
 	margin: 0;
@@ -105,13 +103,6 @@ form.login {
 	padding-bottom: 11;
 }
 
-#email-input {
-	line-height: 1.5;
-}
-div.vertical-input-group {
-	line-height: 1.5;
-	margin-bottom: 15px;
-}
 .form-control {
 	display: block;
 	width: 100%;
@@ -143,7 +134,6 @@ div.vertical-input-group {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
-
 
 /* Start Tables/Members CSS  */
 
