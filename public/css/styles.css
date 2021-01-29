@@ -137,6 +137,11 @@ form.login {
 
 /* Start Tables/Members CSS  */
 
+.fonts-import {
+	font-family: 'Bangers', sans-serif;
+}
+
+
 .chore-title {
 	font-family: 'Bangers', cursive;
 	text-align: center;
@@ -148,8 +153,12 @@ form.login {
 	margin-bottom: 30px !important;
 }
 .column-titles {
-	font-weight: bold;
+	height: 80px;
+	font-weight: 650;
 	margin-top: 4px;
+	line-height: 1rem;
+	letter-spacing: .045em;
+	font-size: larger;
 }
 
 .background-main {
