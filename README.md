@@ -1,6 +1,6 @@
 # Galaxy
 
-[Galaxy Planning](https://galaxy-planner.herokuapp.com/) is a full-stack application designed to make household planning easier. A user or users can keep track of what chores each person is responsible for. All credentials are protected with encryption. A Sequelize ORM coupled with GET and POST enables server-side CRUD functionality.  
+[Galaxy Planning](https://galaxy-planner.herokuapp.com/) is a full-stack application designed to make household planning easier. A user or users can keep track of what chores each person is responsible for. All credentials are protected with encryption. A Sequelize ORM coupled with GET and POST enables server-side CRUD functionality. Long-form AJAX increases security for credentials, authenticity and routes.
 
 ## Table of Contents
 
