@@ -15,7 +15,11 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	);
 	HouseMember.associate = (models) => {
-		HouseMember.belongsTo(models.User);
+		HouseMember.belongsTo(models.User, {
+			foreignKey: {
+				allowNull: false,
+			},
+		});
 	};
 	return HouseMember;
 };
