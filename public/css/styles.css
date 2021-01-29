@@ -6,7 +6,6 @@ html {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
-	/* background: rgb(99, 79, 80) !important; */
 	}
 .big-parent {
     font-family: 'Bangers', sans-serif;
@@ -47,11 +46,11 @@ html {
 	width: 100%;
 	background: #c0392b !important;
 	color: white !important;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	letter-spacing: .07rem;
 }
-.signup_btn
-.login_btn:focus {
-	box-shadow: none !important;
-	outline: 0px !important;
+.form_btn:hover {
+	box-shadow: 0px 0px 0px 2.5px white inset, 0px 0px 0px 5px darkred;
 }
 .signup_container,
 .login_container {
@@ -85,7 +84,6 @@ html {
 	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 	margin-top: 8px;
 }
-
 .form-header {
 	color: white;
 	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
@@ -146,54 +144,33 @@ div.vertical-input-group {
 	border-top-right-radius: 0;
 }
 
-.btn-red-custom {
-	font-size: 1.5rem;
-	line-height: 1.5;
-}
-
-div.box-sizing-inherit {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-}
-
-.btn-red-custom:hover {
-	color: #fff;
-	background-color: #9f0013;
-	/* border-color: #e62429 transparent; */
-    opacity: 1;
-}
-
-.btn-red-custom {
-	color: #fff;
-	background-color: #e62429;
-    /* border-color: #e62429; */
-    transition: none;
-    transition-property: none;
-    transition-duration: 0s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-}
 
 /* Start Tables/Members CSS  */
 
-.choreTitle{
+.chore-title {
 	font-family: 'Bangers', cursive;
 	text-align: center;
-	font-size: 65px;
-	color: rgb(43, 70, 86);
+	font-size: 75px;
+	font-weight: 660;
+	color: rgb(24, 39, 48);
+	letter-spacing: .05em;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	margin-bottom: 30px !important;
 }
-.columnTitles{
+.column-titles {
 	font-weight: bold;
+	margin-top: 4px;
 }
 
-.backgroundMain {
+.background-main {
 	background-image: url("/img/ironMan.jpg");	
 	background-position:initial;	
 	background-size: 1300px;	
 }
-#backgroundTint{	
+#background-tint{	
 	background-color: rgba(255, 255, 255,.5);	
 	background-blend-mode: multiply;	
 } 
+.btn-dark:hover {
+	background-color: grey;
+}
