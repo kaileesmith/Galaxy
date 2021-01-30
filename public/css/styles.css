@@ -26,7 +26,18 @@ html {
 
 	/* img manipulation stretch to page */
 	background-position: center center;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	/* polyfill shenanigans for: 
+		Safari 3+
+		Chrome Whatever+
+		IE 9+
+		Opera 10+
+		Firefox 3.6+
+	
+	*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
     background-size: 100% 100%;
 	background-color: #2b4656;
 }
@@ -174,4 +185,46 @@ form.login {
 } 
 .btn-dark:hover {
 	background-color: grey;
+}
+
+/* mobile */
+@media (max-width: 480px) {
+	.tinted-image {
+		/* pretint value */
+	background: #2b4656;
+
+	/* above color tinted seen below */
+	/* background: rgb(21, 35, 43); */
+	}
+	.form_container {
+		margin-top: 5vh;
+	}
+
+}
+/* end mobile media query */
+
+
+/* start tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+	.tinted-image {
+	/* background large */
+	background-attachment: fixed;
+
+	/* tinting: can change to any color */
+	/* credit to https://css-tricks.com/tinted-images-multiple-backgrounds/ */
+	background-image: linear-gradient(
+	rgba(0, 0, 0, 0.5),
+	rgba(0, 0, 0, 0.5)	),
+	
+	url("/img/MarvelPrint-01.png");
+
+	/* img manipulation stretch to page */
+	background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 1024px 576px;
+	background-color: #2b4656;
+}
+	.form_container {
+	margin-top: 28.8vh;
+}
 }
