@@ -28,17 +28,22 @@ module.exports = function (app) {
 		let HouseMember;
 		let Task;
 		let allData = {};
-		db.HouseMember.findAll({ raw: true }).then((dbHouseMembers) => {
+		db.HouseMember.findAll({
+			where: { id: req.user.id },
+			raw: true,
+		}).then((dbHouseMembers) => {
 			HouseMember = dbHouseMembers;
 			allData.data1 = HouseMember;
 
 			// return HouseMember;
-			db.Task.findAll({ raw: true }).then((dbTask) => {
-				Task = dbTask;
-				allData.data2 = Task;
+			db.Task.findAll({ where: { id: req.user.id }, raw: true }).then(
+				(dbTask) => {
+					Task = dbTask;
+					allData.data2 = Task;
 
-				res.render("members", allData);
-			});
+					res.render("members", allData);
+				}
+			);
 		});
 	});
 };
