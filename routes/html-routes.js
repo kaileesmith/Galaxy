@@ -29,14 +29,14 @@ module.exports = function (app) {
 		let Task;
 		let allData = {};
 		db.HouseMember.findAll({
-			where: { id: req.user.id },
+			where: { UserId: req.user.id },
 			raw: true,
 		}).then((dbHouseMembers) => {
 			HouseMember = dbHouseMembers;
 			allData.data1 = HouseMember;
 
 			// return HouseMember;
-			db.Task.findAll({ where: { id: req.user.id }, raw: true }).then(
+			db.Task.findAll({ where: { UserId: req.user.id }, raw: true }).then(
 				(dbTask) => {
 					Task = dbTask;
 					allData.data2 = Task;
