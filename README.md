@@ -72,7 +72,7 @@ All credentials are protected with encryption. A Sequelize ORM coupled with GET 
 
 ## Links
 
-Github Repo: your repo here
+Github Repo: https://github.com/camRight/Galaxy
 
 Live Deployment: https://galaxy-planner.herokuapp.com/
 
