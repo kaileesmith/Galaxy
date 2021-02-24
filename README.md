@@ -25,7 +25,7 @@ All credentials are protected with encryption. A Sequelize ORM coupled with GET 
     - if nodemon is not installed globally run npm install nodemon in the command line for this project.
         - global nodemon install code: `npm install nodemon -g`
 2. Copy and Paste the schema into MySQL Workbench and run all code.
-3. Launch the application front-end in the command line with `nodemon server.js`
+3. Launch the application stage-environment in the command line with `nodemon server.js`
 4. Nodemon will show what localhost the project is launched on (most likely http://localhost:8080/). Follow the link.
 
 ## Technologies
